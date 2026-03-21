@@ -1,0 +1,120 @@
+Starting Dynare (version 6.5).
+Calling Dynare with arguments: none
+Preprocessing time: 0h00m00s.
+dynare_solve: starting value results in nonfinite/NaN value. Randomize initial guess...
+
+STEADY-STATE RESULTS:
+
+Y   		 0.217714
+K   		 1.08859
+L   		 0.0744573
+C   		 0.190499
+I   		 0.0272147
+W   		 1.46203
+R   		 0.0666667
+P   		 1.00001
+MC  		 0.833342
+tfp 		 0.99999
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   3
+  Number of jumpers:           4
+  Number of static variables:  4
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables    tfp_shock
+tfp_shock     0.010000
+
+POLICY AND TRANSITION FUNCTIONS
+                                   Y               K               L               C               I               W               R               P              MC             tfp
+Constant                    0.226588        1.104749        0.079515        0.183214        0.043373        1.384976        0.067682        1.000010        0.812064        0.999990
+(correction)                0.008874        0.016159        0.005058       -0.007285        0.016159       -0.077057        0.001015               0       -0.021277               0
+K(-1)                       0.022121        0.930470       -0.032990        0.066651       -0.044530        0.796333       -0.054468               0               0               0
+tfp(-1)                    -0.031280       -0.061587       -0.129516        0.030308       -0.061587       -1.740735       -0.195340       -0.900016       -1.572027        0.900000
+P(-1)                      -0.155199       -0.144825       -0.088463       -0.010374       -0.144825       -0.767198       -0.114190               0       -0.833331               0
+tfp_shock                  -0.034755       -0.068430       -0.143905        0.033675       -0.068430       -1.934132       -0.217042       -1.000008       -1.746680        0.999990
+K(-1),K(-1)                -0.016477       -0.001592        0.018220       -0.014885       -0.001592       -0.115584        0.044990               0               0               0
+tfp(-1),K(-1)               0.040183        0.053234        0.082100       -0.013051        0.053234       -1.141368        0.172913               0        0.000508               0
+tfp(-1),tfp(-1)             0.136959        0.152626        0.245273       -0.015667        0.152626        2.328218        0.463844        0.855024        2.812899       -0.045000
+P(-1),K(-1)                -0.026957       -0.029446        0.032818        0.002489       -0.029446       -0.367786        0.089869               0               0               0
+P(-1),tfp(-1)               0.269780        0.249297        0.294941        0.020482        0.249297        2.222641        0.520588               0        2.949756               0
+P(-1),P(-1)                 0.283094        0.264505        0.182382        0.018589        0.264505        1.374558        0.267541               0        1.666646               0
+tfp_shock,tfp_shock         0.149773        0.150407        0.222854       -0.000634        0.150407        1.799771        0.452057        0.500005        2.502271        0.499995
+K(-1),tfp_shock             0.044647        0.059148        0.091221       -0.014501        0.059148       -1.268175        0.192124               0        0.000565               0
+tfp(-1),tfp_shock           0.269595        0.270735        0.401140       -0.001140        0.270735        3.239619        0.813711        0.900018        4.504131        0.900000
+P(-1),tfp_shock             0.299752        0.276994        0.327709        0.022758        0.276994        2.469578        0.578425               0        3.277475               0
+
+
+APPROXIMATED THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+Y              0.2392     0.0307     0.0009
+K              1.4148     0.1619     0.0262
+L              0.0737     0.0195     0.0004
+C              0.2038     0.0180     0.0003
+I              0.0354     0.0177     0.0003
+W              1.6561     0.2699     0.0728
+R              0.0602     0.0327     0.0011
+P              1.0263     0.2294     0.0526
+MC             0.8543     0.2434     0.0592
+tfp            1.0263     0.2294     0.0526
+
+
+
+APPROXIMATED MATRIX OF CORRELATIONS
+Variables          Y        K        L        C        I        W        R        P       MC      tfp
+Y             1.0000   0.6949  -0.5640   0.8615   0.8574  -0.4428  -0.6529  -0.8405  -0.6072   0.8405
+K             0.6949   1.0000  -0.5418   0.9102   0.2800  -0.0082  -0.5922  -0.5398  -0.4016   0.5398
+L            -0.5640  -0.5418   1.0000  -0.7878  -0.1775   0.7974   0.9937   0.8913   0.9710  -0.8913
+C             0.8615   0.9102  -0.7878   1.0000   0.4773  -0.4113  -0.8399  -0.8400  -0.7211   0.8400
+I             0.8574   0.2800  -0.1775   0.4773   1.0000  -0.3494  -0.2786  -0.6032  -0.3199   0.6032
+W            -0.4428  -0.0082   0.7974  -0.4113  -0.3494   1.0000   0.7906   0.8252   0.9112  -0.8252
+R            -0.6529  -0.5922   0.9937  -0.8399  -0.2786   0.7906   1.0000   0.9313   0.9727  -0.9313
+P            -0.8405  -0.5398   0.8913  -0.8400  -0.6032   0.8252   0.9313   1.0000   0.9395  -1.0000
+MC           -0.6072  -0.4016   0.9710  -0.7211  -0.3199   0.9112   0.9727   0.9395   1.0000  -0.9395
+tfp           0.8405   0.5398  -0.8913   0.8400   0.6032  -0.8252  -0.9313  -1.0000  -0.9395   1.0000
+
+
+
+APPROXIMATED COEFFICIENTS OF AUTOCORRELATION
+Order          1       2       3       4       5
+Y         0.8592  0.7873  0.7216  0.6616  0.6067
+K         0.9942  0.9824  0.9656  0.9449  0.9210
+L         0.5801  0.5555  0.5310  0.5068  0.4830
+C         0.9818  0.9597  0.9345  0.9069  0.8775
+I         0.5354  0.4495  0.3744  0.3089  0.2520
+W         0.6791  0.5645  0.4647  0.3779  0.3025
+R         0.6888  0.6543  0.6209  0.5887  0.5575
+P         0.9000  0.8100  0.7290  0.6561  0.5905
+MC        0.6542  0.5888  0.5299  0.4769  0.4292
+tfp       0.9000  0.8100  0.7290  0.6561  0.5905
+Total computing time : 0h00m04s
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 435 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 435 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 435 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 435 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 435 column 1
+    dynare at line 306 column 5
+
+Note: warning(s) encountered in MATLAB/Octave code

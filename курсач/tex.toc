@@ -1,0 +1,20 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Цель работы}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Задачи исследования}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Структура работы}{3}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Описание RBC-модели(Real Business Cycle model, модель реального делового цикла)}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Построение модели}{4}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Задача домохозяйства}{4}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Задача фирмы}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Необходимые условия экстремума (F.O.C.) - для домохозяйства}{5}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Необходимые условия экстремума (F.O.C.) - для фирмы}{6}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Итоговая система}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Поиск стационарной точки}{8}{subsubsection.2.1.6}%
+\contentsline {subsubsection}{\numberline {2.1.7}Итоговые выражения}{9}{subsubsection.2.1.7}%
+\contentsline {subsubsection}{\numberline {2.1.8}Лог-линеаризация}{9}{subsubsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.2}Построение оптимального правила для потребления}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Модель в пространстве состояний}{12}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Уравнение Бэллмана}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Вывод уравнения Бэллмана}{13}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Методы численного решения}{14}{section.4}%
