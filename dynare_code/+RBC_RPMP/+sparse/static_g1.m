@@ -1,0 +1,65 @@
+function [g1, T_order, T] = static_g1(y, x, params, sparse_rowval, sparse_colval, sparse_colptr, T_order, T)
+if nargin < 8
+    T_order = -1;
+    T = NaN(13, 1);
+end
+[T_order, T] = RBC_RPMP.sparse.static_g1_tt(y, x, params, T_order, T);
+g1_v = NaN(52, 1);
+g1_v(1)=1;
+g1_v(2)=(-(y(16)-y(12)));
+g1_v(3)=1;
+g1_v(4)=1-(1-params(3));
+g1_v(5)=(-(T(3)*y(18)*getPowerDeriv(y(2),params(1),1)));
+g1_v(6)=1/y(3);
+g1_v(7)=T(2)*params(6)*getPowerDeriv(y(3),params(5),1);
+g1_v(8)=(-(T(5)*getPowerDeriv(y(3),1-params(1),1)));
+g1_v(9)=(-y(2))/(y(3)*y(3));
+g1_v(10)=T(1)*getPowerDeriv(y(4),params(4),1);
+g1_v(11)=(-1);
+g1_v(12)=(-1);
+g1_v(13)=(-1);
+g1_v(14)=T(13);
+g1_v(15)=(-(params(1)/(1-params(1))*1/y(8)));
+g1_v(16)=(-(T(9)*T(6)*1/(1-params(1))*getPowerDeriv(y(6)/(1-params(1)),1-params(1),1)));
+g1_v(17)=T(13);
+g1_v(18)=1;
+g1_v(19)=(-(params(2)*1/y(16)));
+g1_v(20)=(-(params(1)/(1-params(1))*(-y(6))/(y(8)*y(8))));
+g1_v(21)=(-(T(8)*1/params(1)*getPowerDeriv(y(8)/params(1),params(1),1)));
+g1_v(22)=T(13);
+g1_v(23)=1;
+g1_v(24)=(-(params(2)*1/y(17)));
+g1_v(25)=1/params(16)-T(12)*y(19)*1/params(16)*getPowerDeriv(y(10)/params(16),params(13),1);
+g1_v(26)=T(13);
+g1_v(27)=1;
+g1_v(28)=1;
+g1_v(29)=params(7)/y(16);
+g1_v(30)=y(1);
+g1_v(31)=T(13);
+g1_v(32)=1;
+g1_v(33)=1;
+g1_v(34)=T(13);
+g1_v(35)=1;
+g1_v(36)=(-(params(2)*(-y(8))/(y(16)*y(16))));
+g1_v(37)=(-((-y(6))/(y(16)*y(16))));
+g1_v(38)=(-(y(12)*params(7)))/(y(16)*y(16));
+g1_v(39)=(-y(1));
+g1_v(40)=(-((-y(6))/(y(16)*y(16))));
+g1_v(41)=(-((-y(8))/(y(16)*y(16))));
+g1_v(42)=(-((-y(10))/(y(16)*y(16))));
+g1_v(43)=(-((-y(14))/(y(16)*y(16))));
+g1_v(44)=(-((-y(12))/(y(16)*y(16))));
+g1_v(45)=(-(params(2)*(-y(10))/(y(17)*y(17))));
+g1_v(46)=1;
+g1_v(47)=(-(T(11)*1/params(15)*getPowerDeriv(y(17)/params(15),params(14)*(1-params(13)),1)));
+g1_v(48)=(-(T(3)*T(4)));
+g1_v(49)=(-(T(9)*T(7)*(-1)/(y(18)*y(18))));
+g1_v(50)=T(6)-T(6)*params(9);
+g1_v(51)=(-(T(10)*T(12)));
+g1_v(52)=1/y(19)-params(10)*1/y(19);
+if ~isoctave && matlab_ver_less_than('9.8')
+    sparse_rowval = double(sparse_rowval);
+    sparse_colval = double(sparse_colval);
+end
+g1 = sparse(sparse_rowval, sparse_colval, g1_v, 19, 19);
+end

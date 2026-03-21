@@ -1,3 +1,170 @@
 Starting Dynare (version 6.5).
 Calling Dynare with arguments: none
 Preprocessing time: 0h00m00s.
+
+STEADY-STATE RESULTS:
+
+Y      		 0.386267
+K      		 2.48108
+L      		 0.141888
+C      		 0.32424
+I      		 0.062027
+W      		 1.76953
+Wreal  		 1.47461
+R      		 0.0544898
+Rreal  		 0.0454082
+Rb     		 1.02041
+Rbreal 		 0.85034
+MC     		 1
+MCreal 		 0.833333
+Pr     		 0.0772535
+Prreal 		 0.0643779
+P      		 1.2
+pi     		 1
+tfp    		 1
+mon    		 1
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+               0                0                0
+       1.327e-14        1.327e-14                0
+             0.2              0.2                0
+          0.9385           0.9385                0
+               1                1                0
+           1.101            1.101                0
+           1.171            1.171                0
+           2.275            2.275                0
+       2.287e+16        2.287e+16                0
+       7.858e+18        7.858e+18                0
+
+There are 5 eigenvalue(s) larger than 1 in modulus for 5 forward-looking variable(s)
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         19
+  Number of stochastic shocks: 2
+  Number of state variables:   5
+  Number of jumpers:           5
+  Number of static variables:  10
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables    tfp_shock  mon_shock
+tfp_shock     0.000001   0.000000
+mon_shock     0.000000   0.000006
+
+POLICY AND TRANSITION FUNCTIONS
+                                   Y               K               L               C               I               W           Wreal               R           Rreal              Rb          Rbreal              MC          MCreal              Pr          Prreal               P              pi             tfp             mon
+Constant                    0.386267        2.481081        0.141888        0.324240        0.062027        1.769527        1.474606        0.054490        0.045408        1.020408        0.850340        1.000000        0.833333        0.077253        0.064378        1.200000        1.000000        1.000000        1.000000
+K(-1)                      -0.975000               0       -0.581788               0       -0.975000       -4.697329       -3.023198       -0.390036       -0.297586               0        0.513940       -4.230756       -3.021969        1.159054        1.004788       -0.725273       -0.604394               0               0
+Rb(-1)                    -32.256724      -30.286542      -18.229009       -1.970182      -30.286542     -160.772437     -105.925228      -11.951314       -9.095617        0.938466       16.958292     -135.822435      -97.332650       37.194758       32.220309      -22.827906      -19.023255               0               0
+tfp(-1)                     0.008535        0.007064       -0.038834        0.001471        0.007064       -0.362888       -0.193437       -0.026088       -0.018385       -0.000855        0.062126       -0.500871       -0.355811        0.160924        0.138861       -0.088678       -0.073898        0.200000               0
+P(-1)                              0               0               0               0               0        1.474606               0        0.045408               0               0       -0.708617        0.833333               0        0.064378               0        1.000000               0               0               0
+tfp_shock                  -0.042674       -0.035319        0.194172       -0.007355       -0.035319        1.814442        0.967183        0.130442        0.091924        0.004273       -0.310632        2.504356        1.779055       -0.804619       -0.694303        0.443388        0.369490       -1.000000               0
+mon_shock                  41.143781       38.630793       23.251287        2.512987       38.630793      205.066884      135.108709       15.244023       11.601552       -1.197023      -21.630474      173.242902      124.148789      -47.442294      -41.097333       29.117226       24.264355               0       -1.000000
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+Y              0.3863     0.1031     0.0106
+K              2.4811     0.2796     0.0782
+L              0.1419     0.0583     0.0034
+C              0.3242     0.0182     0.0003
+I              0.0620     0.0971     0.0094
+W                 NaN        NaN        NaN
+Wreal          1.4746     0.3455     0.1193
+R                 NaN        NaN        NaN
+Rreal          0.0454     0.0293     0.0009
+Rb             1.0204     0.0087     0.0001
+Rbreal            NaN        NaN        NaN
+MC                NaN        NaN        NaN
+MCreal         0.8333     0.3104     0.0963
+Pr                NaN        NaN        NaN
+Prreal         0.0644     0.1028     0.0106
+P                 NaN        NaN        NaN
+pi             1.0000     0.0608     0.0037
+tfp            1.0000     0.0010     0.0000
+mon            1.0000     0.0025     0.0000
+
+
+
+VARIANCE DECOMPOSITION (in percent)
+          tfp_shock  mon_shock
+Y              0.00     100.00
+K              0.00     100.00
+L              0.00     100.00
+C              0.00     100.00
+I              0.00     100.00
+Wreal          0.00     100.00
+Rreal          0.00     100.00
+Rb             0.00     100.00
+MCreal         0.00     100.00
+Prreal         0.00     100.00
+pi             0.00     100.00
+tfp          100.00       0.00
+mon            0.00     100.00
+
+
+
+MATRIX OF CORRELATIONS
+Variables          Y        K        L        C        I    Wreal    Rreal       Rb   MCreal   Prreal       pi      tfp      mon
+Y             1.0000   0.4070   0.9891   0.4070   0.9853   0.9895   0.9765  -0.4070   0.9974  -0.9964   0.9908   0.0006  -0.9978
+K             0.4070   1.0000   0.2680   1.0000   0.2447   0.5345   0.2006  -1.0000   0.3403  -0.3290   0.2801   0.0002  -0.3454
+L             0.9891   0.2680   1.0000   0.2680   0.9997   0.9575   0.9976  -0.2680   0.9971  -0.9980   0.9999  -0.0032  -0.9967
+C             0.4070   1.0000   0.2680   1.0000   0.2447   0.5345   0.2006  -1.0000   0.3403  -0.3290   0.2801   0.0005  -0.3454
+I             0.9853   0.2447   0.9997   0.2447   1.0000   0.9503   0.9990  -0.2447   0.9950  -0.9961   0.9993   0.0006  -0.9945
+Wreal         0.9895   0.5345   0.9575   0.5345   0.9503   1.0000   0.9352  -0.5345   0.9766  -0.9740   0.9611  -0.0026  -0.9778
+Rreal         0.9765   0.2006   0.9976   0.2006   0.9990   0.9352   1.0000  -0.2006   0.9895  -0.9911   0.9966  -0.0030  -0.9887
+Rb           -0.4070  -1.0000  -0.2680  -1.0000  -0.2447  -0.5345  -0.2006   1.0000  -0.3403   0.3290  -0.2801  -0.0006   0.3454
+MCreal        0.9974   0.3403   0.9971   0.3403   0.9950   0.9766   0.9895  -0.3403   1.0000  -0.9999   0.9980  -0.0056  -1.0000
+Prreal       -0.9964  -0.3290  -0.9980  -0.3290  -0.9961  -0.9740  -0.9911   0.3290  -0.9999   1.0000  -0.9987   0.0067   0.9998
+pi            0.9908   0.2801   0.9999   0.2801   0.9993   0.9611   0.9966  -0.2801   0.9980  -0.9987   1.0000  -0.0060  -0.9976
+tfp           0.0006   0.0002  -0.0032   0.0005   0.0006  -0.0026  -0.0030  -0.0006  -0.0056   0.0067  -0.0060   1.0000   0.0000
+mon          -0.9978  -0.3454  -0.9967  -0.3454  -0.9945  -0.9778  -0.9887   0.3454  -1.0000   0.9998  -0.9976   0.0000   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order           1        2        3        4        5
+Y          0.0271   0.0254   0.0238   0.0224   0.0210
+K          0.9385   0.8807   0.8265   0.7757   0.7279
+L         -0.0218  -0.0204  -0.0192  -0.0180  -0.0169
+C          0.9385   0.8807   0.8265   0.7757   0.7279
+I         -0.0257  -0.0242  -0.0227  -0.0213  -0.0200
+Wreal      0.1121   0.1052   0.0987   0.0926   0.0869
+Rreal     -0.0301  -0.0283  -0.0265  -0.0249  -0.0234
+Rb         0.9385   0.8807   0.8265   0.7757   0.7279
+MCreal    -0.0018  -0.0017  -0.0016  -0.0015  -0.0014
+Prreal    -0.0057  -0.0054  -0.0050  -0.0047  -0.0044
+pi        -0.0192  -0.0181  -0.0169  -0.0159  -0.0149
+tfp        0.2000   0.0400   0.0080   0.0016   0.0003
+mon        0.0000   0.0000   0.0000   0.0000   0.0000
+Total computing time : 0h00m14s
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 488 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 488 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 488 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 488 column 1
+    dynare at line 306 column 5
+
+warning: Saving classdef objects is not supported. Attempting to save object as struct.
+warning: called from
+    driver at line 488 column 1
+    dynare at line 306 column 5
+
+Note: warning(s) encountered in MATLAB/Octave code
