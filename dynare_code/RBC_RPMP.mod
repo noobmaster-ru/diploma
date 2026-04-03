@@ -9,7 +9,7 @@ parameters alpha betta delta theta psi phi nu mu rho_tfp rho_mon sig_tfp sig_mon
     theta   = 1.25  ;
     psi     = 0.5  ;
     phi     = 16.0 ;
-    nu      = 6.0  ;
+    nu      = 6.0  ; // монопольная премия
     mu      = 30.0  ;
     rho_tfp = 0.2  ;
     rho_mon = 0.0 ;
@@ -33,7 +33,7 @@ model;
     Pr = (P-MC)*Y - (mu/2)*(P/P(-1)-1)^2*P*Y ;
     Y  - C - I - (mu/2)*(P/P(-1)-1)^2*Y = 0;
     pi = P/P(-1);
-    log(tfp) = rho_tfp*log(tfp(-1))-tfp_shock;
+    log(tfp) = rho_tfp*log(tfp(-1)) - tfp_shock;
     (Rb/Rss) = mon*((Rb(-1)/Rss)^gamma)*(pi(+1)/piss)^(tau*(1-gamma));
     log(mon) = rho_mon*log(mon(-1)) - mon_shock;
     Wreal = W/P;
@@ -74,7 +74,7 @@ shocks;
   var mon_shock=sig_mon^2;
 end;
 
-stoch_simul(order=1, irf=40, nograph); // ...,nograph) отключает стандартные графики dynare
+stoch_simul(order=1, irf=100, nograph); // ...,nograph) отключает стандартные графики dynare
 
 // строим свои графики: в t=0 чёрная линия совпадает с красной(SS),
 //  начиная с t=1 видно мгновенную реакцию на шок.
