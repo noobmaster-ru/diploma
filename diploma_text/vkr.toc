@@ -13,15 +13,15 @@
 \contentsline {chapter}{\numberline {3}Исследование и построение решения задачи}{10}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Аналитическое исследование стационарного состояния}{10}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Численные значения стационарного состояния}{12}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Метод стрельбы}{14}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Построение траектории при фиксированном $C_0$}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Метод Ньютона для нахождения $C_{t+1}$}{15}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Псевдокод метода стрельбы}{15}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Описание практической части}{16}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Программная реализация}{16}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Эксперимент 1: старт ниже стационарного уровня капитала}{16}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Эксперимент 2: старт выше стационарного уровня капитала}{18}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Оценка вычислительной схемы}{20}{section.4.4}%
-\contentsline {chapter}{Выводы}{21}{chapter*.13}%
-\contentsline {chapter}{Заключение}{22}{chapter*.14}%
-\contentsline {chapter}{Список литературы}{23}{section*.15}%
+\contentsline {chapter}{\numberline {4}Метод стрельбы}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Построение траектории при фиксированном $C_0$}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Метод Ньютона для нахождения $C_{t+1}$}{16}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Псевдокод метода стрельбы}{16}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Описание практической части}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Программная реализация}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Эксперимент 1: старт ниже стационарного уровня капитала}{17}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Эксперимент 2: старт выше стационарного уровня капитала}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Оценка вычислительной схемы}{21}{section.5.4}%
+\contentsline {chapter}{Выводы}{22}{chapter*.13}%
+\contentsline {chapter}{Заключение}{23}{chapter*.14}%
+\contentsline {chapter}{Список литературы}{24}{section*.15}%
