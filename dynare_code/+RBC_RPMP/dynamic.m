@@ -1,5 +1,5 @@
 function [residual, g1, g2, g3] = dynamic(y, x, params, steady_state, it_)
-    T = NaN(23, 1);
+    T = NaN(54, 1);
     if nargout <= 1
         residual = RBC_RPMP.dynamic_resid(T, y, x, params, steady_state, it_, true);
     elseif nargout == 2

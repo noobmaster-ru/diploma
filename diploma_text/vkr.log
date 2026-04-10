@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.3)  6 APR 2026 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.3)  10 APR 2026 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,7 +276,32 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layouthoffset=\dimen148
 \Gm@layoutvoffset=\dimen149
 \Gm@dimlist=\toks20
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+
+Package epstopdf Warning: No graphics package `graphic{s,x}' loaded.
+
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -433,23 +458,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@floatcapt=\box55
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
- (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-)
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
@@ -459,9 +470,7 @@ Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
+)
 \c@section@level=\count289
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
@@ -1572,13 +1581,13 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip100
 \cfttabnumwidth=\skip101
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 33.
-LaTeX Font Info:    Trying to load font information for T1+Tempora-TLF on input line 73.
+Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+LaTeX Font Info:    Trying to load font information for T1+Tempora-TLF on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/tempora/T1Tempora-TLF.fd
 File: T1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for T1/Tempora-TLF.
 )
 LaTeX Font Info:    Font shape `T1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 73.
+(Font)              scaled to size 12.0pt on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
@@ -1593,51 +1602,51 @@ LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
 )
 \openout1 = `vkr.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 74.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 74.
+LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2ccmr.fd
 File: t2ccmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 74.
+LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2bcmr.fd
 File: t2bcmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 74.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 74.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Info: Redefining \th on input line 73.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Info: Redefining \th on input line 74.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1686,13 +1695,8 @@ LaTeX Info: Redefining \th on input line 73.
 \MPnumerator=\count318
 \makeMPintoPDFobject=\count319
 \everyMPtoPDFconversion=\toks40
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-Package hyperref Info: Link coloring ON on input line 73.
+)
+Package hyperref Info: Link coloring ON on input line 74.
  (./vkr.out) (./vkr.out)
 \@outlinefile=\write3
 \openout3 = `vkr.out'.
@@ -1705,201 +1709,253 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
 \c@mv@tabular=\count320
 \c@mv@boldtabular=\count321
-<images/msu_logo.png, id=108, 454.69875pt x 216.81pt>
+<images/msu_logo.png, id=140, 454.69875pt x 216.81pt>
 File: images/msu_logo.png Graphic file (type png)
 <use images/msu_logo.png>
-Package pdftex.def Info: images/msu_logo.png  used on input line 78.
+Package pdftex.def Info: images/msu_logo.png  used on input line 79.
 (pdftex.def)             Requested size: 187.78836pt x 89.54108pt.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 15.0pt on input line 90.
+(Font)              scaled to size 15.0pt on input line 91.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 95.
+(Font)              scaled to size 12.0pt on input line 96.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 16.0pt on input line 95.
+(Font)              scaled to size 16.0pt on input line 96.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 16.0pt on input line 101.
+(Font)              scaled to size 16.0pt on input line 102.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 15.0pt on input line 109.
+(Font)              scaled to size 15.0pt on input line 110.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 14.0pt on input line 112.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 115.
+(Font)              scaled to size 14.0pt on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 116.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 116.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/tempora/t2a-tempora.enc} <./images/msu_logo.png>]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 127.
- (./vkr.toc)
-\tf@toc=\write4
-\openout4 = `vkr.toc'.
-
-
+(Font)              scaled to size 14.4pt on input line 128.
+ (./vkr.toc
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.128 \clearpage
-                 [1] [2
+l.35 ...ѕРє Р»РёС‚РµСЂР°С‚СѓСЂС‹}{34}{section*.23}
+                                                  % [1])
+\tf@toc=\write4
+\openout4 = `vkr.toc'.
+
+ [2] [3
 
 
 ]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 1.
-[3
+[4
 
-] [4] [5] [6]
+] [5] [6] [7]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 2.
 
-Overfull \hbox (2.19948pt too wide) in paragraph at lines 282--283
+Overfull \hbox (2.19948pt too wide) in paragraph at lines 283--284
 []\T2A/Tempora-TLF/m/n/12 Локальные ме-то-ды ос-но-ва-ны на ап-прок-си-ма-ции ис-ход-ной нели-ней-ной мо-де-ли в окрест-
  []
 
-[7
+[8
 
-] [8]
-LaTeX Font Info:    Trying to load font information for TS1+Tempora-TLF on input line 305.
+] [9]
+LaTeX Font Info:    Trying to load font information for TS1+Tempora-TLF on input line 306.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/tempora/TS1Tempora-TLF.fd
 File: TS1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for TS1/Tempora-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 305.
- [9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/tempora/tmp_ac5xuc.enc}]
+(Font)              scaled to size 12.0pt on input line 306.
+ [10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/tempora/tmp_ac5xuc.enc}]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 3.
-[10
+[11
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.369         \]
+l.370         \]
                 ]
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377         \begin{equation}
+l.378         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377         \begin{equation}
+l.378         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377         \begin{equation}
+l.378         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.377         \begin{equation}
+l.378         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400         \begin{equation}
+l.401         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400         \begin{equation}
+l.401         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400         \begin{equation}
+l.401         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400         \begin{equation}
+l.401         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.405         \begin{equation}
+l.406         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.405         \begin{equation}
+l.406         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.405         \begin{equation}
+l.406         \begin{equation}
                               
 pdfTeX warning (ext4): destination with the same identifier (name{equation.3.1.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.405         \begin{equation}
-                               [11] [12]
+l.406         \begin{equation}
+                               [12] [13]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 465.
+(Font)              scaled to size 8.0pt on input line 466.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 465.
- [13] [14]
+(Font)              scaled to size 6.0pt on input line 466.
+ [14] [15]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 4.
-[15
+[16
 
 ]
-Overfull \hbox (6.77008pt too wide) in paragraph at lines 518--523
+Overfull \hbox (6.77008pt too wide) in paragraph at lines 519--524
 \T2A/Tempora-TLF/m/n/12 Для фик-си-ро-ван-но-го $\OML/cmm/m/it/12 K \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 K[]$ \T2A/Tempora-TLF/m/n/12 ис-поль-зу-ем обо-зна-че-ния $\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 K; c\OT1/cmr/m/n/12 ) = [][]$\T2A/Tempora-TLF/m/n/12 , $\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 K; c\OT1/cmr/m/n/12 ) =
  []
 
 
-Overfull \hbox (24.84105pt too wide) in paragraph at lines 547--548
+Overfull \hbox (24.84105pt too wide) in paragraph at lines 548--549
 []\T2A/Tempora-TLF/m/n/12 Задать па-ра-мет-ры мо-де-ли $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ; ^^L; ^^N; ^^^;  ; A\OT1/cmr/m/n/12 )$ \T2A/Tempora-TLF/m/n/12 и вы-чис-лить ста-ци-о-нар-ное со-сто-я-ние $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 K[]; C[]; L[]\OT1/cmr/m/n/12 )$\T2A/Tempora-TLF/m/n/12 . 
  []
 
-[16]
+[17]
 {\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 5.
-LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 568.
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 567.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-<images/rbc_trajectory_2d_K0_1.0991_T_45.png, id=293, 4818.0pt x 3312.375pt>
+<images/rbc_trajectory_2d_K0_1.0991_T_45.png, id=337, 4818.0pt x 3312.375pt>
 File: images/rbc_trajectory_2d_K0_1.0991_T_45.png Graphic file (type png)
 <use images/rbc_trajectory_2d_K0_1.0991_T_45.png>
-Package pdftex.def Info: images/rbc_trajectory_2d_K0_1.0991_T_45.png  used on input line 589.
+Package pdftex.def Info: images/rbc_trajectory_2d_K0_1.0991_T_45.png  used on input line 588.
 (pdftex.def)             Requested size: 469.47049pt x 322.7152pt.
- [17
+ [18
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}]
-<images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png, id=304, 4818.0pt x 3312.375pt>
+<images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png, id=349, 4818.0pt x 3312.375pt>
 File: images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png Graphic file (type png)
 <use images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png>
-Package pdftex.def Info: images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png  used on input line 596.
+Package pdftex.def Info: images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png  used on input line 595.
 (pdftex.def)             Requested size: 469.47049pt x 322.7152pt.
-<images/rbc_trajectory_3d_1.0991.png, id=305, 4818.0pt x 3613.5pt>
+<images/rbc_trajectory_3d_1.0991.png, id=350, 4818.0pt x 3613.5pt>
 File: images/rbc_trajectory_3d_1.0991.png Graphic file (type png)
 <use images/rbc_trajectory_3d_1.0991.png>
-Package pdftex.def Info: images/rbc_trajectory_3d_1.0991.png  used on input line 604.
+Package pdftex.def Info: images/rbc_trajectory_3d_1.0991.png  used on input line 603.
 (pdftex.def)             Requested size: 469.47049pt x 352.05293pt.
- [18 <./images/rbc_trajectory_2d_K0_1.0991_T_45.png> <./images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png>]
-<images/rbc_trajectory_2d_K0_36.6358_T_56.png, id=316, 4818.0pt x 3312.375pt>
+ [19 <./images/rbc_trajectory_2d_K0_1.0991_T_45.png> <./images/rbc_trajectory_2d_additional_K0_1.0991_T_45.png>]
+<images/rbc_trajectory_2d_K0_36.6358_T_56.png, id=360, 4818.0pt x 3312.375pt>
 File: images/rbc_trajectory_2d_K0_36.6358_T_56.png Graphic file (type png)
 <use images/rbc_trajectory_2d_K0_36.6358_T_56.png>
-Package pdftex.def Info: images/rbc_trajectory_2d_K0_36.6358_T_56.png  used on input line 626.
+Package pdftex.def Info: images/rbc_trajectory_2d_K0_36.6358_T_56.png  used on input line 625.
 (pdftex.def)             Requested size: 469.47049pt x 322.7152pt.
- [19 <./images/rbc_trajectory_3d_1.0991.png>]
-<images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png, id=327, 4818.0pt x 3312.375pt>
+ [20 <./images/rbc_trajectory_3d_1.0991.png>]
+<images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png, id=371, 4818.0pt x 3312.375pt>
 File: images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png Graphic file (type png)
 <use images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png>
-Package pdftex.def Info: images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png  used on input line 633.
+Package pdftex.def Info: images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png  used on input line 632.
 (pdftex.def)             Requested size: 469.47049pt x 322.7152pt.
-<images/rbc_trajectory_3d_36.6358.png, id=328, 4818.0pt x 3613.5pt>
+<images/rbc_trajectory_3d_36.6358.png, id=372, 4818.0pt x 3613.5pt>
 File: images/rbc_trajectory_3d_36.6358.png Graphic file (type png)
 <use images/rbc_trajectory_3d_36.6358.png>
-Package pdftex.def Info: images/rbc_trajectory_3d_36.6358.png  used on input line 641.
+Package pdftex.def Info: images/rbc_trajectory_3d_36.6358.png  used on input line 640.
 (pdftex.def)             Requested size: 469.47049pt x 352.05293pt.
- [20 <./images/rbc_trajectory_2d_K0_36.6358_T_56.png> <./images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png>] [21 <./images/rbc_trajectory_3d_36.6358.png>] [22
+ [21 <./images/rbc_trajectory_2d_K0_36.6358_T_56.png> <./images/rbc_trajectory_2d_additional_K0_36.6358_T_56.png>] [22 <./images/rbc_trajectory_3d_36.6358.png>]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 6.
+[23
 
-] [23
+] [24] [25]
+{\cyrillictext \CYRG \cyrl \cyra \cyrv \cyra } 7.
+<graphs_png_improved/Y_tfp_shock.png, id=410, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/Y_tfp_shock.png Graphic file (type png)
+<use graphs_png_improved/Y_tfp_shock.png>
+Package pdftex.def Info: graphs_png_improved/Y_tfp_shock.png  used on input line 749.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+<graphs_png_improved/C_tfp_shock.png, id=411, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/C_tfp_shock.png Graphic file (type png)
+<use graphs_png_improved/C_tfp_shock.png>
+Package pdftex.def Info: graphs_png_improved/C_tfp_shock.png  used on input line 756.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+[26
 
-] [24
+ <./graphs_png_improved/Y_tfp_shock.png (PNG copy)>]
+<graphs_png_improved/K_tfp_shock.png, id=419, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/K_tfp_shock.png Graphic file (type png)
+<use graphs_png_improved/K_tfp_shock.png>
+Package pdftex.def Info: graphs_png_improved/K_tfp_shock.png  used on input line 763.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+<graphs_png_improved/L_tfp_shock.png, id=420, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/L_tfp_shock.png Graphic file (type png)
+<use graphs_png_improved/L_tfp_shock.png>
+Package pdftex.def Info: graphs_png_improved/L_tfp_shock.png  used on input line 770.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+ [27 <./graphs_png_improved/C_tfp_shock.png (PNG copy)> <./graphs_png_improved/K_tfp_shock.png (PNG copy)>]
+<graphs_png_improved/Y_mon_shock.png, id=427, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/Y_mon_shock.png Graphic file (type png)
+<use graphs_png_improved/Y_mon_shock.png>
+Package pdftex.def Info: graphs_png_improved/Y_mon_shock.png  used on input line 783.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+ [28 <./graphs_png_improved/L_tfp_shock.png (PNG copy)>]
+<graphs_png_improved/C_mon_shock.png, id=432, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/C_mon_shock.png Graphic file (type png)
+<use graphs_png_improved/C_mon_shock.png>
+Package pdftex.def Info: graphs_png_improved/C_mon_shock.png  used on input line 790.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+<graphs_png_improved/K_mon_shock.png, id=433, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/K_mon_shock.png Graphic file (type png)
+<use graphs_png_improved/K_mon_shock.png>
+Package pdftex.def Info: graphs_png_improved/K_mon_shock.png  used on input line 797.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+ [29 <./graphs_png_improved/Y_mon_shock.png (PNG copy)> <./graphs_png_improved/C_mon_shock.png (PNG copy)>]
+<graphs_png_improved/L_mon_shock.png, id=440, 1750.54pt x 1312.905pt>
+File: graphs_png_improved/L_mon_shock.png Graphic file (type png)
+<use graphs_png_improved/L_mon_shock.png>
+Package pdftex.def Info: graphs_png_improved/L_mon_shock.png  used on input line 804.
+(pdftex.def)             Requested size: 375.57782pt x 281.66808pt.
+ [30 <./graphs_png_improved/K_mon_shock.png (PNG copy)> <./graphs_png_improved/L_mon_shock.png (PNG copy)>] [31] [32
+
+] [33
+
+] [34
 
 
 ] (./vkr.aux)
@@ -1908,21 +1964,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `vkr.out' has not changed.
-(rerunfilecheck)             Checksum: CC2A7BA2F8893E2647E982915714B01F;7827.
+(rerunfilecheck)             Checksum: E979EEB6090E87F891E5C54429DF63C8;11392.
  ) 
 Here is how much of TeX's memory you used:
- 18706 strings out of 474116
- 299790 string characters out of 5743682
+ 18809 strings out of 474116
+ 302939 string characters out of 5743682
  1941187 words of memory out of 5000000
- 40657 multiletter control sequences out of 15000+600000
- 590481 words of font info for 70 fonts, out of 8000000 for 9000
+ 40714 multiletter control sequences out of 15000+600000
+ 593250 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,2223b,599s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/tempora/Tempora-Bold.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/tempora/Tempora-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on vkr.pdf (25 pages, 2696026 bytes).
+ 63i,11n,69p,2223b,680s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/tempora/Tempora-Bold.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/tempora/Tempora-Regular.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on vkr.pdf (35 pages, 3284097 bytes).
 PDF statistics:
- 451 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 123 named destinations out of 1000 (max. 500000)
- 244 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 577 PDF objects out of 1000 (max. 8388607)
+ 482 compressed objects within 5 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 348 words of extra memory for PDF output out of 10000 (max. 10000000)
 

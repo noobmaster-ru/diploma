@@ -18,9 +18,16 @@ function T = dynamic_g2_tt(T, y, x, params, steady_state, it_)
 %   T           [#temp variables by 1]       double  vector of temporary terms
 %
 
-assert(length(T) >= 23);
+assert(length(T) >= 54);
 
 T = RBC_RPMP.dynamic_g1_tt(T, y, x, params, steady_state, it_);
 
+T(48) = getPowerDeriv(y(26)/y(9),params(4),2);
+T(49) = T(27)*(-((-y(26))*(y(9)+y(9))))/(y(9)*y(9)*y(9)*y(9))+T(26)*T(26)*T(48);
+T(50) = T(27)*(-1)/(y(9)*y(9))+T(26)*1/y(9)*T(48);
+T(51) = 1/y(9)*1/y(9)*T(48);
+T(52) = (-((-1)/(y(21)*y(21))));
+T(53) = (-((-y(21))*(y(3)+y(3))))/(y(3)*y(3)*y(3)*y(3));
+T(54) = (-1)/(y(3)*y(3));
 
 end

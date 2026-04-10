@@ -166,6 +166,8 @@ options_.bytecode = false;
 options_.use_dll = false;
 options_.ramsey_policy = false;
 options_.discretionary_policy = false;
+M_.nonzero_hessian_eqs = [1 2 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19];
+M_.hessian_eq_zero = isempty(M_.nonzero_hessian_eqs);
 M_.eq_nbr = 19;
 M_.ramsey_orig_eq_nbr = 0;
 M_.ramsey_orig_endo_nbr = 0;
@@ -208,7 +210,7 @@ M_.nboth   = 1;
 M_.nsfwrd   = 5;
 M_.nspred   = 5;
 M_.ndynamic   = 9;
-M_.dynamic_tmp_nbr = [17; 6; 0; 0; ];
+M_.dynamic_tmp_nbr = [21; 26; 7; 0; ];
 M_.equations_tags = {
   1 , 'name' , '1' ;
   2 , 'name' , '2' ;
@@ -264,10 +266,85 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(2, 1);
 M_.params = NaN(16, 1);
 M_.endo_trends = struct('deflator', cell(19, 1), 'log_deflator', cell(19, 1), 'growth_factor', cell(19, 1), 'log_growth_factor', cell(19, 1));
-M_.NNZDerivatives = [71; -1; -1; ];
+M_.NNZDerivatives = [71; 112; -1; ];
 M_.dynamic_g1_sparse_rowval = int32([3 5 6 13 8 9 10 11 12 14 5 8 9 10 3 4 5 6 1 2 4 10 3 10 4 6 7 15 15 6 7 16 16 2 13 17 17 7 8 9 19 19 9 18 18 4 8 9 10 11 15 16 17 18 19 11 5 7 12 13 14 8 1 2 1 1 8 2 13 12 14 ]);
 M_.dynamic_g1_sparse_colval = int32([2 2 2 10 16 16 16 16 18 19 20 20 20 20 21 22 22 22 23 23 23 23 24 24 25 25 25 25 26 27 27 27 28 29 29 29 30 31 31 31 31 32 33 33 34 35 35 35 35 35 35 35 35 35 35 36 37 37 37 38 38 39 42 42 46 54 54 55 55 58 59 ]);
 M_.dynamic_g1_sparse_colptr = int32([1 1 4 4 4 4 4 4 4 4 5 5 5 5 5 5 9 9 10 11 15 16 19 23 25 29 30 33 34 37 38 42 43 45 46 56 57 60 62 63 63 63 65 65 65 65 66 66 66 66 66 66 66 66 68 70 70 70 71 72 ]);
+M_.dynamic_g2_sparse_indices = int32([1 23 23 ;
+1 23 42 ;
+1 42 42 ;
+1 46 54 ;
+1 54 54 ;
+2 23 23 ;
+2 23 42 ;
+2 42 42 ;
+2 29 55 ;
+2 55 55 ;
+4 22 22 ;
+4 22 23 ;
+4 23 23 ;
+4 25 35 ;
+4 35 35 ;
+5 2 2 ;
+5 2 22 ;
+5 2 37 ;
+5 22 22 ;
+5 22 37 ;
+6 2 22 ;
+6 22 22 ;
+6 25 27 ;
+6 27 27 ;
+7 25 25 ;
+7 25 27 ;
+7 25 37 ;
+7 27 27 ;
+7 27 37 ;
+7 37 37 ;
+8 20 20 ;
+8 20 39 ;
+8 20 35 ;
+8 20 54 ;
+8 39 35 ;
+8 39 54 ;
+8 31 35 ;
+8 16 16 ;
+8 16 35 ;
+8 35 35 ;
+8 35 54 ;
+8 54 54 ;
+9 20 31 ;
+9 20 16 ;
+9 20 35 ;
+9 16 16 ;
+9 16 35 ;
+9 35 35 ;
+10 20 16 ;
+10 20 35 ;
+10 16 16 ;
+10 16 35 ;
+10 35 35 ;
+11 16 16 ;
+11 16 35 ;
+12 18 18 ;
+12 37 37 ;
+13 10 10 ;
+13 10 55 ;
+13 10 38 ;
+13 55 55 ;
+13 55 38 ;
+14 19 19 ;
+14 38 38 ;
+15 25 35 ;
+15 35 35 ;
+16 27 35 ;
+16 35 35 ;
+17 29 35 ;
+17 35 35 ;
+18 33 35 ;
+18 35 35 ;
+19 31 35 ;
+19 35 35 ;
+]);
 M_.lhs = {
 '(C(1)/C)^theta-betta*(1+R(1)/P(1)-delta)'; 
 '(C(1)/C)^theta-betta*Rb/pi(1)'; 
@@ -311,7 +388,7 @@ M_.params(8) = 30.0;
 mu = M_.params(8);
 M_.params(9) = 0.2;
 rho_tfp = M_.params(9);
-M_.params(10) = 0.0;
+M_.params(10) = 0.2;
 rho_mon = M_.params(10);
 M_.params(11) = 0.001;
 sig_tfp = M_.params(11);
@@ -333,151 +410,10 @@ oo_.dr.eigval = check(M_,options_,oo_);
 M_.exo_det_length = 0;
 M_.Sigma_e(1, 1) = M_.params(11)^2;
 M_.Sigma_e(2, 2) = M_.params(12)^2;
-options_.irf = 100;
-options_.nograph = true;
-options_.order = 1;
+options_.irf = 50;
+options_.order = 2;
 var_list_ = {};
 [info, oo_, options_, M_] = stoch_simul(M_, options_, oo_, var_list_);
-if ~exist('plots_absolute', 'dir')
-mkdir('plots_absolute');
-end
-vars = {'Y','K','L','C','I','W','Wreal','R','Rreal','Rb','Rbreal','MC','MCreal','Pr','Prreal','P','pi','tfp','mon'};
-shock_list = {'tfp_shock','mon_shock'};
-T = options_.irf;
-ss = oo_.steady_state;
-for s = 1:length(shock_list)
-shock_name = shock_list{s};
-f1 = figure('visible', 'off');
-set(f1, 'Position', [40 40 2400 1500]);
-for i = 1:9
-subplot(3,3,i);
-varname = vars{i};
-idx = strmatch(varname, M_.endo_names, 'exact');
-irf_field = [varname '_' shock_name];
-if ~isempty(idx) && isfield(oo_.irfs, irf_field)
-irf = oo_.irfs.(irf_field);
-level = ss(idx) + irf(:);
-level_plot = [ss(idx); level]; 
-plot(0:T, level_plot, 'k', 'LineWidth', 2); 
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title(varname, 'FontSize', 14);
-set(gca, 'FontSize', 12, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-end
-end
-print(f1, fullfile('plots_absolute', ['absolute_figure_1_' shock_name '.png']), '-dpng', '-r300');
-close(f1);
-f2 = figure('visible', 'off');
-set(f2, 'Position', [40 40 2400 1500]);
-for i = 10:18
-subplot(3,3,i-9);
-varname = vars{i};
-idx = strmatch(varname, M_.endo_names, 'exact');
-irf_field = [varname '_' shock_name];
-if ~isempty(idx) && isfield(oo_.irfs, irf_field)
-irf = oo_.irfs.(irf_field);
-level = ss(idx) + irf(:);
-level_plot = [ss(idx); level]; 
-plot(0:T, level_plot, 'k', 'LineWidth', 2); 
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title(varname, 'FontSize', 14);
-set(gca, 'FontSize', 12, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-end
-end
-print(f2, fullfile('plots_absolute', ['absolute_figure_2_' shock_name '.png']), '-dpng', '-r300');
-close(f2);
-f3 = figure('visible', 'off');
-set(f3, 'Position', [80 80 1800 1000]);
-varname = 'mon';
-idx = strmatch(varname, M_.endo_names, 'exact');
-irf_field = [varname '_' shock_name];
-if ~isempty(idx) && isfield(oo_.irfs, irf_field)
-irf = oo_.irfs.(irf_field);
-level = ss(idx) + irf(:);
-level_plot = [ss(idx); level]; 
-plot(0:T, level_plot, 'k', 'LineWidth', 2); 
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title('mon', 'FontSize', 16);
-set(gca, 'FontSize', 13, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-print(f3, fullfile('plots_absolute', ['absolute_mon_' shock_name '.png']), '-dpng', '-r300');
-end
-close(f3);
-end
-if ~exist('plots_joint', 'dir')
-mkdir('plots_joint');
-end
-T = 40;
-ss = oo_.dr.ys;                 
-Ex = zeros(T, M_.exo_nbr);      
-Ex(1, strmatch('tfp_shock', M_.exo_names, 'exact')) = sig_tfp;
-Ex(1, strmatch('mon_shock', M_.exo_names, 'exact')) = sig_mon;
-Yjoint = simult_(M_, options_, ss, oo_.dr, Ex, 1);
-vars = {'Y','K','L','C','I','W','Wreal','R','Rreal','Rb','Rbreal','MC','MCreal','Pr','Prreal','P','pi','tfp','mon'};
-f1 = figure('visible', 'off');
-set(f1, 'Position', [40 40 2400 1500]);
-for i = 1:9
-subplot(3,3,i);
-varname = vars{i};
-idx = strmatch(varname, M_.endo_names, 'exact');
-if ~isempty(idx)
-level_plot = [ss(idx), Yjoint(idx,1:T)];
-plot(0:T, level_plot, 'k', 'LineWidth', 2);
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title(varname, 'FontSize', 14);
-set(gca, 'FontSize', 12, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-end
-end
-print(f1, fullfile('plots_joint', 'joint_figure_1.png'), '-dpng', '-r300');
-close(f1);
-f2 = figure('visible', 'off');
-set(f2, 'Position', [40 40 2400 1500]);
-for i = 10:18
-subplot(3,3,i-9);
-varname = vars{i};
-idx = strmatch(varname, M_.endo_names, 'exact');
-if ~isempty(idx)
-level_plot = [ss(idx), Yjoint(idx,1:T)];
-plot(0:T, level_plot, 'k', 'LineWidth', 2);
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title(varname, 'FontSize', 14);
-set(gca, 'FontSize', 12, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-end
-end
-print(f2, fullfile('plots_joint', 'joint_figure_2.png'), '-dpng', '-r300');
-close(f2);
-f3 = figure('visible', 'off');
-set(f3, 'Position', [80 80 1800 1000]);
-idx = strmatch('mon', M_.endo_names, 'exact');
-level_plot = [ss(idx), Yjoint(idx,1:T)];
-plot(0:T, level_plot, 'k', 'LineWidth', 2);
-hold on;
-yline(ss(idx), 'r', 'LineWidth', 1.5);
-grid on;
-title('mon / joint shocks', 'FontSize', 16);
-set(gca, 'FontSize', 13, 'LineWidth', 1.1);
-xlim([0 T]);
-hold off;
-print(f3, fullfile('plots_joint', 'joint_mon.png'), '-dpng', '-r300');
-close(f3);
 
 
 oo_.time = toc(tic0);
@@ -507,6 +443,7 @@ end
 if exist('options_mom_', 'var') == 1
   save([M_.dname filesep 'Output' filesep 'RBC_RPMP_results.mat'], 'options_mom_', '-append');
 end
+disp('Note: 1 warning(s) encountered in the preprocessor')
 if ~isempty(lastwarn)
   disp('Note: warning(s) encountered in MATLAB/Octave code')
 end
