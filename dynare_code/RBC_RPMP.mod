@@ -23,14 +23,15 @@ Rss;
 model;
    (C(+1)/C)^theta - betta*(R(+1)/P(+1)+1-delta) = 0;
    (C(+1)/C)^theta - betta*(Rb/pi(+1))=0;
-   K(+1) - (1-delta)*K - I = 0;
+   K(+1) - (1-delta)*K - I = 0; // издержки на изменение капитала
    phi*(L^psi)*(C^theta) - W/P = 0;
    Y - tfp*K^alpha*L^(1-alpha) = 0;
    K/L - (W/R)*(alpha/(1-alpha)) = 0;
    MC - (1/tfp)*(W/(1-alpha))^(1-alpha)*(R/alpha)^(alpha)=0;
    (1-nu)+nu*MC/P - mu*(P/P(-1) - 1)*(P/P(-1)) + betta*mu*(P(+1)/P -1)*(P(+1)/P)^2*(Y(+1)/Y)= 0;
    Pr = (P-MC)*Y - (mu/2)*(P/P(-1)-1)^2*P*Y ;
-   Y - C - I - (mu/2)*(P/P(-1)-1)^2*Y = 0;
+   // Y - C - I - (mu/2)*(P/P(-1)-1)^2 = 0;
+   Y - C - I - (phi/2)*(K(+1)/K - 1)^2 = 0;  // Ресурсное ограничение с издержками
    pi = P/P(-1);
    log(tfp) = rho_tfp*log(tfp(-1))+tfp_shock;
    (Rb/Rss) = mon*((Rb(-1)/Rss)^gamma)*(pi(+1)/piss)^(tau*(1-gamma));

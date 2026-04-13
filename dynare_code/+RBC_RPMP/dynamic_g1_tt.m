@@ -18,35 +18,35 @@ function T = dynamic_g1_tt(T, y, x, params, steady_state, it_)
 %   T           [#temp variables by 1]       double  vector of temporary terms
 %
 
-assert(length(T) >= 47);
+assert(length(T) >= 49);
 
 T = RBC_RPMP.dynamic_resid_tt(T, y, x, params, steady_state, it_);
 
-T(22) = getPowerDeriv(y(1),params(1),1);
-T(23) = y(23)*T(22);
-T(24) = params(6)*getPowerDeriv(y(8),params(5),1);
-T(25) = getPowerDeriv(y(8),1-params(1),1);
-T(26) = (-y(26))/(y(9)*y(9));
-T(27) = getPowerDeriv(y(26)/y(9),params(4),1);
-T(28) = getPowerDeriv(y(9),params(4),1);
-T(29) = 1/y(21);
-T(30) = (-T(29));
-T(31) = 1/(1-params(1))*getPowerDeriv(y(11)/(1-params(1)),1-params(1),1);
-T(32) = T(6)*T(31);
-T(33) = 1/params(1)*getPowerDeriv(y(13)/params(1),params(1),1);
-T(34) = 1/params(16);
-T(35) = T(34)*getPowerDeriv(y(2)/params(16),params(13),1);
-T(36) = y(24)*T(35);
-T(37) = (-y(21))/(y(3)*y(3));
-T(38) = T(15)*T(37)*2*(T(10)-1);
-T(39) = 1/y(3);
-T(40) = (-y(28))/(y(21)*y(21));
-T(41) = 2*y(28)/y(21);
-T(42) = T(40)*T(41);
-T(43) = T(12)*params(2)*params(8)*T(40)+T(11)*T(42);
-T(44) = T(15)*2*(T(10)-1)*T(39);
-T(45) = T(29)*T(41);
-T(46) = T(12)*params(2)*params(8)*T(29)+T(11)*T(45);
-T(47) = 1/params(15)*getPowerDeriv(y(29)/params(15),params(14)*(1-params(13)),1);
+T(24) = getPowerDeriv(y(1),params(1),1);
+T(25) = y(23)*T(24);
+T(26) = (-y(7))/(y(1)*y(1));
+T(27) = 2*(y(7)/y(1)-1);
+T(28) = params(6)*getPowerDeriv(y(8),params(5),1);
+T(29) = getPowerDeriv(y(8),1-params(1),1);
+T(30) = (-y(26))/(y(9)*y(9));
+T(31) = getPowerDeriv(y(26)/y(9),params(4),1);
+T(32) = getPowerDeriv(y(9),params(4),1);
+T(33) = 1/y(21);
+T(34) = (-T(33));
+T(35) = 1/(1-params(1))*getPowerDeriv(y(11)/(1-params(1)),1-params(1),1);
+T(36) = T(6)*T(35);
+T(37) = 1/params(1)*getPowerDeriv(y(13)/params(1),params(1),1);
+T(38) = 1/params(16);
+T(39) = T(38)*getPowerDeriv(y(2)/params(16),params(13),1);
+T(40) = y(24)*T(39);
+T(41) = (-y(21))/(y(3)*y(3));
+T(42) = 1/y(3);
+T(43) = (-y(28))/(y(21)*y(21));
+T(44) = 2*y(28)/y(21);
+T(45) = T(43)*T(44);
+T(46) = T(12)*params(2)*params(8)*T(43)+T(11)*T(45);
+T(47) = T(33)*T(44);
+T(48) = T(12)*params(2)*params(8)*T(33)+T(11)*T(47);
+T(49) = 1/params(15)*getPowerDeriv(y(29)/params(15),params(14)*(1-params(13)),1);
 
 end
