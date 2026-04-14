@@ -1,4 +1,4 @@
-%!TEX root = ../graduate-work.tex
+%!TEX root = ../diploma.tex
 
 % Отключаем номер главы для эмуляции пакета article
 \counterwithout{section}{chapter}
@@ -28,13 +28,13 @@
 
 %Стандартный стиль оформления
 \makepagestyle{standart}
-%Настройка верхнего колонтитула
-\makeevenhead{standart}{}{\thepage}{}  % номер по центру колонтитула
-\makeoddhead{standart}{}{\thepage}{}
+%Настройка верхнего колонтитула (пустой)
+\makeevenhead{standart}{}{}{}
+\makeoddhead{standart}{}{}{}
 
-%Настройка нижнего колонтитула
-\makeevenfoot{standart}{}{}{}
-\makeoddfoot{standart}{}{}{}
+%Настройка нижнего колонтитула (номер по центру)
+\makeevenfoot{standart}{}{\thepage}{}
+\makeoddfoot{standart}{}{\thepage}{}
 
 %Ассоциируем новый стиль со встроенным стилем plain
 \aliaspagestyle{plain}{standart}

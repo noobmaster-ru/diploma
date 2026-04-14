@@ -48,7 +48,7 @@
   dashed=true, 
   url=true
 ]{biblatex}
-\addbibresource{graduate-work.bib}
+\addbibresource{diploma.bib}
 
 % Команды шаблона
 \input{styles/commands}
@@ -67,7 +67,13 @@
     \clearpage
 
     %Вставляем основное содержание
-    \Source
+    \include{mainfiles/intro}
+    \include{mainfiles/chapter1}
+    \include{mainfiles/chapter2}
+    \include{mainfiles/chapter3}
+    \include{mainfiles/chapter4}
+    \include{mainfiles/chapter5}
+    \include{mainfiles/conclusion}
 
     %Печатаем библиографию
     \clearpage

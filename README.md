@@ -1,4 +1,10 @@
 # My diploma
+```bash
+    pdflatex diploma.tex
+    biber diploma
+    pdflatex diploma.tex
+    pdflatex diploma.tex
+```
 
 
 ## Запуск octave:

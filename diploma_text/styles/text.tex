@@ -1,4 +1,4 @@
-%!TEX root = ../graduate-work.tex
+%!TEX root = ../diploma.tex
 
 %Отступ в первом абзаце раздела
 \usepackage{indentfirst}
@@ -12,3 +12,17 @@
 \usepackage{csquotes}
 \usepackage{hyphenat}
 % \hyphenation{ма-те-ма-ти-ка вос-ста-нав-ли-вать}
+
+
+% Принудительное уменьшение размера заголовков глав
+\usepackage{titlesec}
+
+% Уменьшение размера заголовков секций
+\titleformat{\chapter}[hang]{\large\bfseries}{\thechapter}{1em}{}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{}
+% Для ненумерованных глав (звёздочка)
+\titleformat{name=\chapter,numberless}[hang]{\large\bfseries}{}{0pt}{} % Если вы хотите ещё меньший шрифт, замените \large на \normalsize или \small.
+% Настройка отступов до и после заголовка
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
