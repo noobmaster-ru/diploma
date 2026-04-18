@@ -123,9 +123,9 @@
 	\providecaptionname{english}{\deedegreelong}{Degree in Electrical and Computer Engineering}
 	\providecaptionname{portuguese}{\deedegreelong}{Licenciatura em Engenharia Eletrot\'{e}cnica e de Computadores}
 	\institute[]{\deedegreelong}
-	\renewcommand{\course}{}
-	\providecaptionname{english}{\course}{}
-	\providecaptionname{portuguese}{\course}{}
+	\renewcommand{\course}{Выпускная квалификационная работа}
+	\providecaptionname{english}{\course}{Выпускная квалификационная работа}
+	\providecaptionname{portuguese}{\course}{Выпускная квалификационная работа}
 	\renewcommand{\footerlabel}{кафедра ВМ ВМК МГУ}	
 }{}
 
@@ -224,30 +224,32 @@
   \vfill
   \begingroup
     \centering
-	{\scshape\scriptsize \course}\vskip1em  
+    \vspace*{0.9cm}
     \begin{beamercolorbox}[sep=8pt,center]{title}
-      \usebeamerfont{title}\inserttitle\par%
+      {\fontsize{12}{14}\selectfont\bfseries\inserttitle\par}%
       \ifx\insertsubtitle\@empty%
       \else%
         \vskip0.25em%
-        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+        {\scriptsize\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
       \fi%     
     \end{beamercolorbox}%
-    \vskip1em\par
+    \vskip0.8em\par
     \begin{beamercolorbox}[sep=5pt,center]{author}
-      \usebeamerfont{author}\insertauthor\\
+      {\fontsize{18}{20}\selectfont\bfseries \course\par}
+      \vspace{0.45em}
+      {\fontsize{10}{12}\selectfont\insertauthor\par}
       % {\tiny (estudante nº \stdnumber)}
     \end{beamercolorbox}%
     \begin{beamercolorbox}[sep=5pt,center]{institute}
-    	\textbetweenrules[.2pt]{\scriptsize\deedegree}
-    	\vspace{-8pt}    
-		\usebeamerfont{institute}\insertinstitute
+        \textbetweenrules[.2pt]{\fontsize{8}{9}\selectfont\deedegree}
+    	\vspace{-6pt}    
+        {\fontsize{8}{9}\selectfont\insertinstitute}
     \end{beamercolorbox}\vskip1.1em
 	\begin{tabularx}{0.8\textwidth}{ X >{\centering\arraybackslash}m{4cm} X >{\centering\arraybackslash}m{4cm} X}
-	~ & \includegraphics[width=3.3cm,keepaspectratio]{vm.png} & ~~ & \includegraphics[width=2.0cm,keepaspectratio]{theme/вмк.png} & ~\\
+	~ & \includegraphics[width=2.2cm,keepaspectratio]{vm.png} & ~~ & \includegraphics[width=1.3cm,keepaspectratio]{theme/вмк.png} & ~\\
 	\end{tabularx}\\
     \begin{beamercolorbox}[sep=8pt,center]{date}
-      \usebeamerfont{date}\insertdate
+      {\fontsize{8}{9}\selectfont\insertdate}
     \end{beamercolorbox}  
   \endgroup
   \vfill
