@@ -1,4 +1,6 @@
 # My diploma
+
+# Компиляция текста ВКР
 ```bash
     pdflatex diploma.tex
     biber diploma
@@ -10,10 +12,6 @@
 ## Запуск octave:
 ```bash
     octave --gui
-```
-
-## Затем в терминале octave
-```bash
     cd dynare_code/
     addpath /opt/homebrew/opt/dynare/lib/dynare/matlab
 ```

@@ -1,0 +1,431 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% Template for DEE@ISEP Presentations, for LEEC, LETI and MEEC
+% developed by Vitor M. R. Cunha - v1.0, Mar 2024
+% Suggestions and comments are welcomed (vrc at isep dot ipp dot pt).
+%
+% Template provided as is, NO SUPPORT will be given.
+% NO questions related to Beamer (or LaTeX) will be answered, go to
+% https://tug.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf, or search the web.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CLASS SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+aspectratio=169,	% Comment for 4:3 aspect ratio
+LEEC,				% Use this option to select your DEE degree, options: LEEC, LETI
+portuguese,			% Select document language, options: portuguese, english
+%handout			% Uncomment to make the PDF WITHOUT overlays, e.g., for PDF submission before the presentation 
+]{DEEclassP}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{arrows.meta, positioning}
+% Use the 'preamble.tex' file (root folder) do add packages and macros. Keep your main.tex file clean.
+\input{preamble}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PRESENTATION INFORMATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Эффективные коммуникации в задаче федеративного обучения}
+\author{Козлов Кирилл Андреевич}
+% \author[]{Аветисян Арам Арутюнович}
+% \author[Маркин Юрий Витальевич]{}
+\predate{\today} 					% Presentation date, comment this line for automatic date (today)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}[noframenumbering,plain]
+	\titlepage
+\end{frame}
+
+% \begin{frame}{Структура}
+% 	\tableofcontents
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAKE YOUR SLIDES AFTER THIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}{Актуальность задачи}
+\setlstep{0.3cm}{0cm}{0cm}
+\begin{itemize}
+    \item Медицинские данные зачастую являются персональной информацией пациента, поэтому их централизованное хранение невозможно.
+    
+    \item Коммуникации между клиентами и сервером являются узким местом, поэтому важно уметь производить коммуникации эффективно
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.42\textwidth]{figures/fl.png}
+    \caption[width=0.3\textwidth]{Сценарий федеративного обучения}
+    \label{fig0:fl_setup}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Постановка задачи}
+% Use the 'fragile' option when your slide has \verb or a listing
+
+\setlstep{0.3cm}{0cm}{0cm}
+\begin{itemize}
+	% \item Федеративное обучение сводится к решению следующей оптимизационной задачи
+ % \begin{equation}\label{eq0:fl_setup}
+ %     \min_{\x \in \bR^d}\left\{f(\x) \overset{\mathrm{def}}{=} \dfrac{1}{M}\sum_{m=1}^M f_m(\x)\right\},
+ % \end{equation}
+ % где $f_m(\x) \overset{\mathrm{def}}{=} \bE_{\z_m \sim \cc{D}_m}[f_m(\x, \z_m)]$ -- функция потерь клиента $m$, $\cc{D}_m$ -- распределение данных клиента $m$, $\x$ -- параметры модели.
+
+        \item Цель нашего исследования научится производить коммуникации эффективно за счет уменьшения количества клиентов, которые учавствуют в коммуникации.
+
+        \item Работая с меньшим количеством клиентов, мы уменьшаем нагрузку на сеть, что позволяет экономить ресурсы, необходимые для передачи данных между клиентами и сервером, например, деньги.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{FedAvg \footcite{mcmahan2017communication}}
+\begin{minipage}{0.65\textwidth}
+\begin{algorithm}[H]
+\caption{Federated Averaging}
+\begin{algorithmic}[1]
+\State \textbf{Initialize} $\x_0$
+\For {each round $t = 1, 2, \dots$}
+    \State $S_t \gets$ (случайное множество $m$ клиентов)
+    \For {клиента $k \in S_t$ \textbf{параллельно}}
+        \State $\x_{t+1}^k \gets \textsc{Обновление Клиента}(k, \x_t)$
+    \EndFor
+    \State $m_t \gets \sum_{k \in S_t} n_k$
+    \State $\x_{t+1} \gets \sum_{k \in S_t} \frac{n_k}{m_t} \x_{t+1}^k$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.44\textwidth}
+% \begin{algorithm}[H]
+% \caption{ClientUpdate($k$, $\x$)}
+% \begin{algorithmic}[1]
+% \State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+% \For {each local epoch $i$ from $1$ to $E$}
+%     \For {batch $b \in \mathcal{B}$}
+%         \State $\x \gets \x - \eta \nabla \ell(w; b)$
+%     \EndFor
+% \EndFor
+% \State \Return $\x$ to server
+% \end{algorithmic}
+% \end{algorithm}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{FedAvg, локальные вычисления клиентов\footcite{mcmahan2017communication}}
+\begin{minipage}{0.65\textwidth}
+\caption{Federated Averaging}
+\begin{algorithmic}[1]
+\begin{algorithm}[H]
+\caption{Обновление Клиента($k$, $\x$)}
+\begin{algorithmic}[1]
+\State $\mathcal{B} \gets$ (split $\mathcal{P}_k$ into batches of size $B$)
+\For {each local epoch $i$ from $1$ to $E$}
+    \For {batch $b \in \mathcal{B}$}
+        \State $\x \gets \x - \eta \nabla \ell(w; b)$
+    \EndFor
+\EndFor
+\State \Return $\x$ to server
+\end{algorithmic}
+\end{algorithm}
+\end{algorithmic}
+\end{minipage}
+\hfill
+\begin{minipage}{0.44\textwidth}
+
+\end{minipage}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Обзор решений \footcite{survey2024}}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.35\textwidth]{theme/client_selection_challenges.png}
+\label{fig0:cl_sel_challenges}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Наш метод}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1\textwidth]{figures/Optimal.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Наш метод}
+    
+\begin{tikzpicture}[
+  every node/.style={rectangle, draw, rounded corners, minimum height=2em},
+  every path/.style={thick},
+  align=center
+]
+
+% Nodes
+\node[ellipse, draw] (top) 
+    {$L(M) \to \min$ \\ 
+    $M\to \min$};
+
+\node (left) [below left=of top, xshift=-1.0cm] 
+    {$\dfrac{L_{k-1} - L(M)}{M} \to \max\limits_M$};
+
+\node (middle) [below=of top, yshift=-2cm] 
+    {$\dfrac{L_{k-1} - L(M)}{M} - \dfrac{|L(M_{\text{avg}}) - L(M)|}{M_{\text{avg}}/M} \to \max\limits_M$ \\
+    $M_{\text{avg}} = \dfrac{1}{h} \sum_{i=k-h}^{k-1} M_i$};
+
+\node (right) [below right=of top, xshift=+1.3cm] 
+    {$L_{k-1} - L(M) > 0$};
+
+% Arrows
+\draw[->] (top) -- (left);
+\draw[->] (top) -- (middle);
+\draw[->] (top) -- (right);
+
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Наш метод}
+    \begin{figure}[h]
+        \centering
+        \begin{minipage}{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{plots/our_method.png}
+            \caption{Наш метод, Loss}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.49\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]{plots/our_method_square.png} 
+            \caption{Наш метод, Communications}
+        \end{minipage}
+    \end{figure}
+\end{frame}
+
+
+
+\begin{frame}[fragile]{Дальнейшие планы}
+\setlstep{0.3cm}{0cm}{0cm}
+\begin{itemize}
+        \item Посмотреть как неравномерное распределение повлияет на наши методы
+
+        \item Доработать методы для работы в неравномерном случае
+
+        \item Сравниться с другими существующими алгоритмами
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Конец}
+    \centering
+    \huge Спасибо за внимание!
+\end{frame}
+
+% \begin{frame}{Метод Ladder}
+%     \begin{figure}[h]
+%         \centering
+%         \includegraphics[width=0.7\textwidth]{plots/ladder_scheme.png}
+%     \end{figure}
+% \end{frame}
+
+% \begin{frame}{Метод Ladder}
+%     \begin{figure}[h]
+%         \centering
+%         \begin{minipage}{0.49\textwidth}
+%             \centering
+%             \includegraphics[width=\textwidth]{plots/ladder_loss.png}
+%             \caption{FedLight Ladder, Loss}
+%         \end{minipage}
+%         \hfill
+%         \begin{minipage}{0.49\textwidth}
+%             \centering
+%             \includegraphics[width=\textwidth]{plots/ladder_square.png} 
+%             \caption{FedLight Ladder, Communications}
+%         \end{minipage}
+%     \end{figure}
+% \end{frame}
+
+
+% \begin{frame}{Метод Maximize}
+%     \begin{figure}[h]
+%         \centering
+%         \begin{minipage}{0.49\textwidth}
+%             \centering
+%             \includegraphics[width=\textwidth]{plots/max_loss.png}
+%             \caption{FedLight Maximize, Loss}
+%         \end{minipage}
+%         \hfill
+%         \begin{minipage}{0.49\textwidth}
+%             \centering
+%             \includegraphics[width=\textwidth]{plots/max_square.png} 
+%             \caption{FedLight Maximize, Communications}
+%         \end{minipage}
+%     \end{figure}
+% \end{frame}
+
+
+
+% \begin{frame}{FedLight Fix}
+% \begin{minipage}{0.54\textwidth}
+% \begin{algorithm}[H]
+% \caption{Fedlight Fix}
+% \begin{algorithmic}[1]
+% \State \textbf{Initialize} $\x_0$, $max$, $fix$
+% \For {each round $t = 1, 2, \dots$}
+%     \State $valLoss \gets$ evaluate model($x_{t}$)
+%     \State $S_t \gets$ ChooseClients($valLoss$, $max$, $fix$)
+%     \For {each client $k \in S_t$ \textbf{in parallel}}
+%         \State $\x_{t+1}^k \gets \textsc{ClientUpdate}(k, \x_t)$
+%     \EndFor
+%     \State $m_t \gets \sum_{k \in S_t} n_k$
+%     \State $\x_{t+1} \gets \sum_{k \in S_t} \frac{n_k}{m_t} \x_{t+1}^k$
+% \EndFor
+% \end{algorithmic}
+% \end{algorithm}
+% \end{minipage}
+% \hfill
+% \begin{minipage}{0.44\textwidth}
+% \begin{algorithm}[H]
+% \caption{ChooseClients($valLoss$, $max$, $fix$)}
+% \begin{algorithmic}[1]
+
+% \If {$valLoss$ < $bestLoss$}
+%     \State $bestLoss$ $\gets$ $valLoss$
+%     \State \Return random sample of $fix$ clients
+% \Else
+%     \State \Return random sample of $max$ clients
+% \EndIf
+
+% \end{algorithmic}
+% \end{algorithm}
+% \end{minipage}
+% \end{frame}
+
+% \begin{frame}{Эксперименты FedLight Fix, пример square}
+% \setlstep{0.4cm}{0cm}{0cm}
+% \begin{itemize}
+%     \item За единицу коммуникаций берется коммуникация с 1 клиентом.
+%     \begin{figure}[h]
+%         \centering
+%         \includegraphics[width=0.45\textwidth]{plots/square_example.png}
+%         \caption[width=0.1\textwidth]{{Пример square графика}}
+%         \label{fig0:dataset_growth}
+%     \end{figure}
+% \end{itemize}
+% \end{frame}
+
+
+
+% \begin{frame}{FedLight Ladder 1/2}
+% \begin{minipage}{\textwidth}
+% \begin{algorithm}[H]
+% \caption{Fedlight Ladder}
+% \begin{algorithmic}[1]
+% \State \textbf{Initialize} $\x_0$, $p_i$, $p_d$, $s$, $c = 1$, $p_1 = 0$, $p_2 = 0$ 
+% \For {each round $t = 1, 2, \dots$}
+%     \State $valLoss \gets$ evaluate model($x_{t}$)
+%     \State $S_t \gets$ ChooseClients($p_i, p_d, s, p_1, p_2, c$)
+%     \For {each client $k \in S_t$ \textbf{in parallel}}
+%         \State $\x_{t+1}^k \gets \textsc{ClientUpdate}(k, \x_t)$
+%     \EndFor
+%     \State $m_t \gets \sum_{k \in S_t} n_k$
+%     \State $\x_{t+1} \gets \sum_{k \in S_t} \frac{n_k}{m_t} \x_{t+1}^k$
+% \EndFor
+% \end{algorithmic}
+% \end{algorithm}
+% \end{minipage}
+
+
+% \end{frame}
+
+% \begin{frame}{FedLight Ladder 2/2}
+% \begin{algorithm}[H]
+% \caption{ChooseClients($p_i, p_d, s, p_1, p_2, c$)}
+% \begin{multicols}{2}
+% \begin{algorithmic}[1]
+% \If {$valLoss$ < $bestLoss$}
+%     \State $bestLoss$ $\gets$ $valLoss$
+%     \State $p_1 \gets p_1 + 1$
+%     \State $p_2 \gets 0$
+% \Else
+%     \State $p_1 \gets 0$
+%     \State $p_2 \gets p_2 + 1$
+% \EndIf
+
+% \If {$p_1$ >= $p_i$}
+%     \State $c \gets c - s$
+% \EndIf
+% \If {$p_2$ >= $p_d$}
+%     \State $c \gets c + s$
+% \EndIf
+% \State \Return random sample of $c$ clients
+
+% \end{algorithmic}
+% \end{multicols}
+% \end{algorithm}
+% \end{frame}
+
+
+
+
+
+% \begin{frame}{FedLight Ladder 2/2}
+% $$L(M) = \frac{1}{|D|} \sum_{i=1}^D \ell(\sum_{k\in S_i} \frac{1}{|S_i|} x^k_t)$$
+% \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
