@@ -18,9 +18,12 @@ function T = dynamic_g2_tt(T, y, x, params, steady_state, it_)
 %   T           [#temp variables by 1]       double  vector of temporary terms
 %
 
-assert(length(T) >= 12);
+assert(length(T) >= 25);
 
 T = RBC.dynamic_g1_tt(T, y, x, params, steady_state, it_);
 
+T(23) = getPowerDeriv(y(13)/y(6),params(4),2);
+T(24) = getPowerDeriv(y(1),params(1),2);
+T(25) = getPowerDeriv(y(5),1-params(1),2);
 
 end

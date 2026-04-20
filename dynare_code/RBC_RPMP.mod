@@ -66,5 +66,11 @@ shocks;
   var mon_shock=sig_mon^2;
 end;
 
-stoch_simul(irf=50);
+stoch_simul(irf=40);
+
+Y_irf = oo_.irfs.Y_tfp_shock;
+C_irf = oo_.irfs.C_tfp_shock;
+I_irf = oo_.irfs.I_tfp_shock;
+L_irf = oo_.irfs.L_tfp_shock;
+save('dynare_irf.mat', 'Y_irf', 'C_irf', 'I_irf', 'L_irf');
 

@@ -58,3 +58,15 @@ end
 
 fprintf('Улучшенные PNG-графики сохранены в папку graphs_png_improved/\n');
 ```
+
+
+## сохранение данных в .csv
+```
+    irf_K = oo_.irfs.K_tfp_shock(:);
+    irf_C = oo_.irfs.C_tfp_shock(:);
+    irf_L = oo_.irfs.L_tfp_shock(:);
+    T = length(irf_K);
+    time = (0:T-1)';
+    data = [time, irf_K, irf_C, irf_L];
+    csvwrite('irf_dynare.csv', data);
+```

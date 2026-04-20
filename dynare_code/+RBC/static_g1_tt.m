@@ -13,9 +13,11 @@ function T = static_g1_tt(T, y, x, params)
 %   T         [#temp variables by 1]  double   vector of temporary terms
 %
 
-assert(length(T) >= 7);
+assert(length(T) >= 11);
 
 T = RBC.static_resid_tt(T, y, x, params);
 
+T(10) = getPowerDeriv(y(2),params(1),1);
+T(11) = getPowerDeriv(y(3),1-params(1),1);
 
 end
