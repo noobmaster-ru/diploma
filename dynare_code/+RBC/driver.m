@@ -394,7 +394,7 @@ M_.params(6) = 5.0;
 phi = M_.params(6);
 M_.params(7) = 0.7;
 rho_tfp = M_.params(7);
-M_.params(8) = 0.1;
+M_.params(8) = 0.2;
 sig_tfp = M_.params(8);
 steady;
 %

@@ -9,7 +9,7 @@ theta   = 1.25;
 psi     = 0.75;
 phi     = 5.0;
 rho_tfp = 0.7;
-sig_tfp = 0.1;
+sig_tfp = 0.2;
 
 model;
 (C(+1)/C)^theta - betta*(R(+1)+1-delta) = 0;
