@@ -4,6 +4,8 @@
 \usepackage{indentfirst}
 %Точка после номера раздела
 \usepackage{misccorr}
+% Настройка списков с пользовательскими метками (label=...)
+\usepackage{enumitem}
 
 \usepackage{hyperref}
 %Тонкое оформление перекрёстных ссылок
@@ -19,10 +21,35 @@
 
 % Уменьшение размера заголовков секций
 \titleformat{\chapter}[hang]{\large\bfseries}{\thechapter}{1em}{}
-\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titleformat{\subsubsection}{\normalsize\itshape}{}{0pt}{}
 % Для ненумерованных глав (звёздочка)
 \titleformat{name=\chapter,numberless}[hang]{\large\bfseries}{}{0pt}{} % Если вы хотите ещё меньший шрифт, замените \large на \normalsize или \small.
 % Настройка отступов до и после заголовка
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+% Скрываем номера section/subsection/subsubsection в оглавлении
+\makeatletter
+\let\origl@section\l@section
+\renewcommand*{\l@section}[2]{%
+  \begingroup
+  \let\numberline\@gobble
+  \origl@section{#1}{#2}%
+  \endgroup
+}
+\let\origl@subsection\l@subsection
+\renewcommand*{\l@subsection}[2]{%
+  \begingroup
+  \let\numberline\@gobble
+  \origl@subsection{#1}{#2}%
+  \endgroup
+}
+\let\origl@subsubsection\l@subsubsection
+\renewcommand*{\l@subsubsection}[2]{%
+  \begingroup
+  \let\numberline\@gobble
+  \origl@subsubsection{#1}{#2}%
+  \endgroup
+}
+\makeatother
