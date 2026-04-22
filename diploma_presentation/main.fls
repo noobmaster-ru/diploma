@@ -728,6 +728,9 @@ INPUT ./plots/rbc_trajectory_3d_32.2582.png
 INPUT ./theme/vm.png
 INPUT ./theme/vm.png
 INPUT ./theme/vm.png
+INPUT ./theme/vm.png
+INPUT ./theme/vm.png
+INPUT ./theme/vm.png
 INPUT ./plots/local_global_dsge.png
 INPUT ./plots/local_global_dsge.png
 INPUT ./plots/local_global_dsge.png
