@@ -4,8 +4,6 @@
 % Warning : this file is generated automatically by Dynare
 %           from model file (.mod)
 
-clearvars -global
-clear_persistent_variables(fileparts(which('dynare')), false)
 tic0 = tic;
 % Define global variables.
 global M_ options_ oo_ estim_params_ bayestopt_ dataset_ dataset_info estimation_info
