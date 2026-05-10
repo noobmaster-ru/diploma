@@ -404,11 +404,19 @@ options_.irf = 40;
 options_.order = 2;
 var_list_ = {};
 [info, oo_, options_, M_] = stoch_simul(M_, options_, oo_, var_list_);
-Y_irf = oo_.irfs.Y_tfp_shock;
-C_irf = oo_.irfs.C_tfp_shock;
-I_irf = oo_.irfs.I_tfp_shock;
-L_irf = oo_.irfs.L_tfp_shock;
-save('dynare_irf.mat', 'Y_irf', 'C_irf', 'I_irf', 'L_irf');
+Y_irf  = oo_.irfs.Y_tfp_shock;
+K_irf  = oo_.irfs.K_tfp_shock;
+L_irf  = oo_.irfs.L_tfp_shock;
+C_irf  = oo_.irfs.C_tfp_shock;
+I_irf  = oo_.irfs.I_tfp_shock;
+W_irf  = oo_.irfs.W_tfp_shock;
+R_irf  = oo_.irfs.R_tfp_shock;
+Pr_irf = oo_.irfs.Pr_tfp_shock;
+MC_irf = oo_.irfs.MC_tfp_shock;
+tfp_irf = oo_.irfs.tfp_tfp_shock;
+save('dynare_irf.mat', ...
+     'Y_irf', 'K_irf', 'L_irf', 'C_irf', 'I_irf', ...
+     'W_irf', 'R_irf', 'Pr_irf', 'MC_irf', 'tfp_irf');
 
 
 oo_.time = toc(tic0);

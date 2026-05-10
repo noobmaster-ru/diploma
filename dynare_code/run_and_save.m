@@ -15,49 +15,66 @@ irf = oo_.irfs;
 T = numel(irf.Y_tfp_shock);
 t = 0:(T-1);
 
-ss.Y = oo_.steady_state(strmatch('Y', M_.endo_names, 'exact'));
-ss.C = oo_.steady_state(strmatch('C', M_.endo_names, 'exact'));
-ss.I = oo_.steady_state(strmatch('I', M_.endo_names, 'exact'));
-ss.L = oo_.steady_state(strmatch('L', M_.endo_names, 'exact'));
+names = {'Y', 'K', 'L', 'C', 'I', 'W', 'R', 'Pr', 'MC', 'tfp'};
+titles = {'Output Y', 'Capital K', 'Labor L', 'Consumption C', ...
+          'Investment I', 'Wage W', 'Rental rate R', 'Profit Pr', ...
+          'Marginal cost MC', 'TFP'};
 
-series = {'Y', 'C', 'I', 'L'};
-titles = {'Output Y', 'Consumption C', 'Investment I', 'Labor L'};
+ss = struct();
+for k = 1:numel(names)
+    nm = names{k};
+    ss.(nm) = oo_.steady_state(strmatch(nm, M_.endo_names, 'exact'));
+end
 
-for k = 1:numel(series)
-    name = series{k};
-    raw = irf.([name '_tfp_shock']);
-    pct = 100 * raw / ss.(name);
+% Per-variable PNGs
+for k = 1:numel(names)
+    nm = names{k};
+    raw = irf.([nm '_tfp_shock']);
+    % Защита от деления на ноль для переменных, чей SS близок к 0.
+    if abs(ss.(nm)) < 1e-10
+        pct = raw;
+        ylab = 'level deviation from SS';
+    else
+        pct = 100 * raw / ss.(nm);
+        ylab = '% deviation from SS';
+    end
 
     f = figure('visible', 'off');
     plot(t, pct, 'r-', 'linewidth', 2); hold on;
     plot(t, zeros(size(t)), 'k:', 'linewidth', 1);
     grid on;
     xlabel('Periods');
-    ylabel('% deviation from SS');
-    title([titles{k} ' — Dynare local IRF (1 std TFP shock)']);
-    fname = fullfile(out_dir, ['dynare_irf_' name '.png']);
+    ylabel(ylab);
+    title([titles{k} ' --- Dynare local IRF (1 std TFP shock)']);
+    fname = fullfile(out_dir, ['dynare_irf_' nm '.png']);
     print(f, fname, '-dpng', '-r150');
     close(f);
 end
 
-f = figure('visible', 'off', 'position', [0 0 1200 800]);
-for k = 1:numel(series)
-    subplot(2, 2, k);
-    name = series{k};
-    raw = irf.([name '_tfp_shock']);
-    pct = 100 * raw / ss.(name);
-    plot(t, pct, 'r-', 'linewidth', 2); hold on;
+% Combined panel: 5 rows x 2 cols
+f = figure('visible', 'off', 'position', [0 0 1100 1500]);
+for k = 1:numel(names)
+    subplot(5, 2, k);
+    nm = names{k};
+    raw = irf.([nm '_tfp_shock']);
+    if abs(ss.(nm)) < 1e-10
+        pct = raw;
+        ylab = 'level dev.';
+    else
+        pct = 100 * raw / ss.(nm);
+        ylab = '% dev.';
+    end
+    plot(t, pct, 'r-', 'linewidth', 1.6); hold on;
     plot(t, zeros(size(t)), 'k:', 'linewidth', 1);
     grid on;
     xlabel('Periods');
-    ylabel('% deviation');
+    ylabel(ylab);
     title(titles{k});
 end
 print(f, fullfile(out_dir, 'dynare_irf_panel.png'), '-dpng', '-r150');
 close(f);
 
-% RBC.mod already saved dynare_irf.mat into dynare_code/. Mirror to repo root
-% so the notebook (which loads ../dynare_irf.mat) finds an up-to-date copy.
+% RBC.mod уже сохранил dynare_irf.mat в dynare_code/. Зеркалим в корень.
 if exist('dynare_irf.mat', 'file')
     copyfile('dynare_irf.mat', fullfile('..', 'dynare_irf.mat'));
 end
