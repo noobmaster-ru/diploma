@@ -319,16 +319,19 @@ VFI является устойчивым и концептуально проз
         \item Вычислить стационарное состояние $(K^*,C^*,L^*)$.
         \item Зафиксировать $K_0$.
         \item Задать начальный интервал для потребления: $C_0\in[C_{\min},C_{\max}]$.
-        \item Повторять внешнюю бисекцию по $C_0$, пока $|C_{\max}-C_{\min}|\ge\varepsilon_{\text{outer}}$.
-        \item На каждой итерации положить $C_0=\frac{C_{\min}+C_{\max}}{2}$.
-        \item Построить траекторию на горизонте $t=0,1,\dots,T-1$.
-        \item Для каждого $t$ вычислить \(L_t=\left(\frac{(1-\alpha)A}{\phi}\frac{K_t^\alpha}{C_t}\right)^{\frac{1}{\psi+\alpha}}\).
-        \item Для каждого $t$ вычислить \(Y_t=A K_t^\alpha L_t^{1-\alpha}\).
-        \item Для каждого $t$ вычислить \(K_{t+1}=Y_t-C_t+(1-\delta)K_t\).
-        \item Для каждого $t$ найти $C_{t+1}$ методом Ньютона из \(f(c)=c-\beta\bigl(1+R(K_{t+1},c)-\delta\bigr)C_t=0\).
-        \item По завершении траектории вычислить терминальное отклонение $g(C_0)=K_T-K^*$.
-        \item Если $g(C_0)>0$, положить $C_{\min}=C_0$.
-        \item Если $g(C_0)\le0$, положить $C_{\max}=C_0$.
+        \item Повторять внешнюю бисекцию по $C_0$, пока $|C_{\max}-C_{\min}|\ge\varepsilon_{\text{outer}}$:
+        \begin{enumerate}[label=\alph*),leftmargin=2em]
+            \item Положить $C_0=\dfrac{C_{\min}+C_{\max}}{2}$.
+            \item Построить траекторию на горизонте $t=0,1,\dots,T-1$, для каждого $t$ выполняя:
+            \begin{enumerate}[label=\roman*.,leftmargin=2em]
+                \item вычислить $L_t=\left(\dfrac{(1-\alpha)A}{\phi}\dfrac{K_t^\alpha}{C_t}\right)^{\frac{1}{\psi+\alpha}}$;
+                \item вычислить $Y_t=A K_t^\alpha L_t^{1-\alpha}$;
+                \item вычислить $K_{t+1}=Y_t-C_t+(1-\delta)K_t$;
+                \item найти $C_{t+1}$ методом Ньютона из $f(c)=c-\beta\bigl(1+R(K_{t+1},c)-\delta\bigr)C_t=0$.
+            \end{enumerate}
+            \item По завершении траектории вычислить терминальное отклонение $g(C_0)=K_T-K^*$.
+            \item Если $g(C_0)>0$, положить $C_{\min}=C_0$, иначе $C_{\max}=C_0$.
+        \end{enumerate}
         \item После сходимости внешней бисекции принять найденное $C_0^*$.
         \item Построить итоговую saddle-path траекторию $(K_t,C_t,L_t)$.
     \end{enumerate}

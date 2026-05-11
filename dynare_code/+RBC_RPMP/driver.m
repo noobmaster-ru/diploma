@@ -4,8 +4,6 @@
 % Warning : this file is generated automatically by Dynare
 %           from model file (.mod)
 
-clearvars -global
-clear_persistent_variables(fileparts(which('dynare')), false)
 tic0 = tic;
 % Define global variables.
 global M_ options_ oo_ estim_params_ bayestopt_ dataset_ dataset_info estimation_info
@@ -408,10 +406,15 @@ oo_.dr.eigval = check(M_,options_,oo_);
 M_.exo_det_length = 0;
 M_.Sigma_e(1, 1) = M_.params(11)^2;
 M_.Sigma_e(2, 2) = M_.params(12)^2;
-options_.irf = 50;
+options_.irf = 40;
 options_.order = 2;
 var_list_ = {};
 [info, oo_, options_, M_] = stoch_simul(M_, options_, oo_, var_list_);
+Y_irf = oo_.irfs.Y_tfp_shock;
+C_irf = oo_.irfs.C_tfp_shock;
+I_irf = oo_.irfs.I_tfp_shock;
+L_irf = oo_.irfs.L_tfp_shock;
+save('dynare_irf.mat', 'Y_irf', 'C_irf', 'I_irf', 'L_irf');
 
 
 oo_.time = toc(tic0);
