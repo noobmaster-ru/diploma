@@ -224,7 +224,7 @@
   \vfill
   \begingroup
     \centering
-    \vspace*{0.9cm}
+    \vspace*{0.1cm}
     \begin{beamercolorbox}[sep=8pt,center]{title}
       {\fontsize{12}{14}\selectfont\bfseries\inserttitle\par}%
       \ifx\insertsubtitle\@empty%
@@ -244,11 +244,11 @@
         \textbetweenrules[.2pt]{\fontsize{8}{9}\selectfont\deedegree}
     	\vspace{-6pt}    
         {\fontsize{8}{9}\selectfont\insertinstitute}
-    \end{beamercolorbox}\vskip1.1em
+    \end{beamercolorbox}\vskip0.6em
 	\begin{tabularx}{0.8\textwidth}{ X >{\centering\arraybackslash}m{4cm} X >{\centering\arraybackslash}m{4cm} X}
-	~ & \includegraphics[width=2.2cm,keepaspectratio]{vm.png} & ~~ & \includegraphics[width=1.3cm,keepaspectratio]{theme/вмк.png} & ~\\
+	~ & \includegraphics[width=1.8cm,keepaspectratio]{vm.png} & ~~ & \includegraphics[width=1.1cm,keepaspectratio]{theme/вмк.png} & ~\\
 	\end{tabularx}\\
-    \begin{beamercolorbox}[sep=8pt,center]{date}
+    \begin{beamercolorbox}[sep=4pt,center]{date}
       {\fontsize{8}{9}\selectfont\insertdate}
     \end{beamercolorbox}  
   \endgroup

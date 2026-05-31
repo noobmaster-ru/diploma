@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 1776635494.79188 "main.bcf" "main.bbl" "main" 1776848639.77897 0
-  "main.bcf" 1776848639.55379 107320 c5ef2bb82d22ae51ed65b78950db531b "pdflatex"
+["biber main"] 1780152439.51145 "main.bcf" "main.bbl" "main" 1780152446.91663 2
+  "main.bcf" 1778327840.2209 107320 c5ef2bb82d22ae51ed65b78950db531b "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1776848633.74524 "/Users/kirillkozlov/Desktop/diploma/diploma_presentation/main.tex" "main.pdf" "main" 1776848639.77937 0
+["pdflatex"] 1776848633.74524 "main.tex" "main.pdf" "main" 1776848639.77937 0
   "/Users/kirillkozlov/Desktop/diploma/diploma_presentation/main.tex" 1776848627.04602 12827 0c5c45009ec80d027f312f5c79041a42 ""
   "/Users/kirillkozlov/Library/texlive/2024/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm" 1727984616.16466 3252 bc0f8cc163ba94bbce20e59f671a255d ""
   "/Users/kirillkozlov/Library/texlive/2024/texmf-var/fonts/tfm/lh/lh-t2a/larm0600.tfm" 1732565713.19706 3248 7c0b9d76a2cd84ed06764a4c6eea5de4 ""
@@ -356,13 +356,13 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1727905162 8221428 5d91f70e98c0d18d8bdedfd985395e7c ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "DEEclassP.cls" 1776508307.02685 12137 59b7818c103cc7c14410d9d4e445acde ""
-  "main.aux" 1776848639.54726 2226 6f5749dc79a808a2cc52fe4ef259831a "pdflatex"
-  "main.bbl" 1776635499.89728 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.nav" 1776848639.55497 1295 6613b1ca7d9b3db42a4da034ba88e851 "pdflatex"
-  "main.out" 1776848635.56759 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1776848639.55488 2415 800ea9ecae22d067242e3da46ec5e563 "pdflatex"
+  "main.aux" 1780152431.49184 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "main.bbl" 1780152446.85023 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
+  "main.nav" 1778327840.22207 1295 6613b1ca7d9b3db42a4da034ba88e851 "pdflatex"
+  "main.out" 0 -1 0 "pdflatex"
+  "main.run.xml" 1778327840.22935 2415 800ea9ecae22d067242e3da46ec5e563 "pdflatex"
   "main.tex" 1776848627.04602 12827 0c5c45009ec80d027f312f5c79041a42 ""
-  "main.vrb" 1776848639.44456 575 e6a3b0b75da940c17e52931c1cd7b457 "pdflatex"
+  "main.vrb" 1778327840.22995 575 e6a3b0b75da940c17e52931c1cd7b457 "pdflatex"
   "plots/local_global_dsge.png" 1776802823.62914 96473 470f988341a88e9e2bcac3e133c0f300 ""
   "plots/rbc_solution_kc.png" 1776634842.5269 87925 6b1617b6374b666681e69432cdc6bbde ""
   "plots/rbc_solution_kl.png" 1776634958.12914 91145 56f76f489361ab8cd3a7c59df183b838 ""

@@ -108,6 +108,54 @@ portuguese,			% Select document language, options: portuguese, english
     \]
 \end{frame}
 
+\begin{frame}{Вывод модели: условия первого порядка (FOC)}
+\scriptsize
+\begin{itemize}
+    \item В условиях совершенной конкуренции задача эквивалентна задаче социального планировщика (первая теорема благосостояния).
+    \item Лагранжиан задачи домохозяйства с множителем $\lambda_t$:
+\end{itemize}
+\[
+\mathcal{L}=E_0\sum_{t=0}^{\infty}\beta^t\Big[u(C_t,L_t)+\lambda_t\big((1-\delta)K_t+W_tL_t+R_tK_t-C_t-K_{t+1}\big)\Big].
+\]
+\begin{itemize}
+    \item Условия первого порядка по $C_t,\,L_t,\,K_{t+1}$ дают $\lambda_t=u_C(C_t,L_t)$, внутрипериодный выбор труда и межвременное уравнение Эйлера:
+\end{itemize}
+\[
+-\frac{u_L(C_t,L_t)}{u_C(C_t,L_t)}=W_t,
+\qquad
+C_t^{-\sigma}=\beta\,E_t\big[C_{t+1}^{-\sigma}(1-\delta+R_{t+1})\big].
+\]
+\begin{itemize}
+    \item FOC фирмы (предельные продукты факторов):
+    \(\; W_t=(1-\alpha)\dfrac{Y_t}{L_t},\quad R_t=\alpha\dfrac{Y_t}{K_t}.\)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Итоговая модель: динамическая система}
+\scriptsize
+\begin{itemize}
+    \item Труд выражается явно через $K_t$ и $C_t$, поэтому все эндогенные переменные становятся функциями пары $(K_t,C_t)$. Итоговая система:
+\end{itemize}
+\[
+\begin{cases}
+L_t = \left( \dfrac{(1-\alpha)A}{\phi}\cdot\dfrac{K_t^{\alpha}}{C_t} \right)^{\frac{1}{\psi+\alpha}}, \\[8pt]
+Y_t = A K_t^{\alpha} L_t^{1-\alpha},\quad
+R_t = \alpha \dfrac{Y_t}{K_t},\quad
+w_t = (1-\alpha)\dfrac{Y_t}{L_t},\quad
+I_t = Y_t - C_t, \\[8pt]
+K_{t+1} = Y_t - C_t + (1-\delta) K_t, \\[6pt]
+C_{t+1} = \beta\big(1 + R(K_{t+1},C_{t+1}) - \delta\big)\,C_t.
+\end{cases}
+\]
+\begin{itemize}
+    \item Переход по капиталу $K_{t+1}$ --- явный; переход по потреблению $C_{t+1}$ задан неявно (уравнение Эйлера решается методом Ньютона).
+    \item $K_0$ задано, начальное $C_0$ подбирается методом стрельбы так, чтобы траектория сходилась к стационарному состоянию.
+\end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{Описание детерминированной модели}
 \scriptsize
 
@@ -176,17 +224,20 @@ portuguese,			% Select document language, options: portuguese, english
 \end{minipage}
 \end{frame}
 
-\begin{frame}{Численное решение RBC: 3D траектория}
+\begin{frame}{Численное решение RBC: 3D траектория (метод стрельбы)}
 \centering
 \begin{minipage}{0.49\textwidth}
     \centering
-    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{plots/rbc_trajectory_3d_0.8065.png}
+    \includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{plots/rbc_3d.png}
 \end{minipage}
 \hfill
 \begin{minipage}{0.49\textwidth}
     \centering
-    \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{plots/rbc_trajectory_3d_32.2582.png}
+    \includegraphics[width=\linewidth,height=0.62\textheight,keepaspectratio]{plots/rbc_3d_2.png}
 \end{minipage}
+
+\vspace{0.4em}
+{\scriptsize Траектории $(K_t,L_t,C_t)$ при $K_0=10K^*$ (слева) и $K_0=0.4K^*$ (справа). Тонкими красными линиями показаны \textbf{неудачные траектории}, расходящиеся при неверном выборе $C_0$; цветная линия --- успешная траектория, сошедшаяся к стационарному состоянию (красный ромб, SS).}
 \end{frame}
 
 
@@ -208,18 +259,21 @@ portuguese,			% Select document language, options: portuguese, english
 
 
 
-\begin{frame}{Локальное vs Глобальное решение DSGE}
+
+\begin{frame}{Решение стохастической модели: реальные величины}
     \centering
-    \includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{plots/local_global_dsge.png}
+    \includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{plots/comparison_dynare_vs_chebyshev_part1.png}
+
+    {\scriptsize Сравнение локального и глобального решений на шок $\mathit{tfp}$ ($\sigma_{\mathit{tfp}}=0{,}2$): выпуск $Y$, капитал $K$, труд $L$, потребление $C$, инвестиции $I$, зарплата $W$ (\% отклонения от стационара).}
 \end{frame}
 
-\begin{frame}[fragile]{Необходимые доработки}
-    \setlstep{0.3cm}{0cm}{0cm}
-    \begin{itemize}
-            \item Добавить в стохастическую модель инфляцию(жёсткость цен) и монетарный шок.
-            \item Провести численные симуляции импульсных откликов для различных типов шоков (технологический, монетарный) и сравнить с результатами локального решения. 
-    \end{itemize}
+\begin{frame}{Решение стохастической модели: цены и факторы}
+    \centering
+    \includegraphics[width=\linewidth,height=0.80\textheight,keepaspectratio]{plots/comparison_dynare_vs_chebyshev_part2.png}
+
+    {\scriptsize Локальное и глобальное решения: процентная ставка $R$, прибыль $\mathit{Pr}$, предельные издержки $\mathit{MC}$, $\mathit{tfp}$. Глобальное (нелинейное) решение точнее описывает динамику при больших отклонениях от стационара.}
 \end{frame}
+
 
 
 \begin{frame}{Конец}
