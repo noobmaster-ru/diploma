@@ -140,17 +140,13 @@ C_t^{-\sigma}=\beta\,E_t\big[C_{t+1}^{-\sigma}(1-\delta+R_{t+1})\big].
 \end{itemize}
 \[
 \begin{cases}
-L_t = \left( \dfrac{(1-\alpha)A}{\phi}\cdot\dfrac{K_t^{\alpha}}{C_t} \right)^{\frac{1}{\psi+\alpha}}
-    & \text{- решаем методом Ньютона} \\[8pt]
+L_t = \left( \dfrac{(1-\alpha)A}{\phi}\cdot\dfrac{K_t^{\alpha}}{C_t} \right)^{\frac{1}{\psi+\alpha}} \\[8pt]
 Y_t = A K_t^{\alpha} L_t^{1-\alpha},\;\,
 R_t = \alpha \dfrac{Y_t}{K_t},\;\,
 w_t = (1-\alpha)\dfrac{Y_t}{L_t},\;\,
-I_t = Y_t - C_t
-    & \text{- эндогенные переменные } \\[8pt]
-K_{t+1} = Y_t - C_t + (1-\delta) K_t
-    & \text{- закон движения капитала } \\[6pt]
-C_{t+1} = \beta\big(1 + R(K_{t+1},C_{t+1}) - \delta\big)\,C_t
-    & \text{- уравнение Эйлера } \\
+I_t = Y_t - C_t \\[8pt]
+K_{t+1} = Y_t - C_t + (1-\delta) K_t \\[6pt]
+C_{t+1} = \beta\big(1 + R(K_{t+1},C_{t+1}) - \delta\big)\,C_t \\
 \end{cases}
 \]
 \begin{itemize}
@@ -275,7 +271,7 @@ C_{t+1} = \beta\big(1 + R(K_{t+1},C_{t+1}) - \delta\big)\,C_t
         \includegraphics[width=\linewidth,height=0.76\textheight,keepaspectratio]{plots/comparison_dynare_vs_chebyshev_part2.png}
     \end{minipage}
 
-    {\scriptsize Технологический шок ($\sigma=0{,}2$; \% отклонения от стационара): слева --- реальные величины и труд; справа --- цены и факторы. Глобальное (нелинейное) решение точнее при больших шоках.}
+    {\scriptsize Технологический шок ($\sigma=0{,}2$; \% отклонения от стационара): слева --- реальные величины и труд; справа --- цены и факторы}
 \end{frame}
 
 
